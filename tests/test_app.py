@@ -84,6 +84,16 @@ class AppTests(unittest.TestCase):
         self.assertEqual(self.put(self.client, info['csrf'], payload=payload).status_code, 200)
         self.assertEqual(self.client.get('/api/state').get_json()['state'], payload)
 
+    def test_pending_answer_survives_server_backup_and_rejects_invalid_pending(self):
+        info = self.client.get('/api/state').get_json()
+        payload = state()
+        payload['session'] = {'mode': 'learn', 'ids': ['q01', 'q02'], 'index': 0, 'responses': {}, 'pending': {'id': 'q01', 'selected': [0]}}
+        self.assertEqual(self.put(self.client, info['csrf'], payload=payload).status_code, 200)
+        self.assertEqual(self.client.get('/api/state').get_json()['state'], payload)
+        for pending in [None, {'id': 'q02', 'selected': [0]}, {'id': 'q01', 'selected': []}, {'id': 'q01', 'selected': [99]}, {'id': 'q01', 'selected': [0, 0]}]:
+            payload['session']['pending'] = pending
+            self.assertEqual(self.put(self.client, info['csrf'], revision=1, payload=payload).status_code, 400)
+
 
 if __name__ == '__main__':
     unittest.main()

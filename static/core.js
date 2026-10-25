@@ -35,6 +35,11 @@ export function validateState(s){
  for(const [key,n]of Object.entries(s.daily))if(!validDate(key)||!integer(n))throw Error('日別履歴が正しくありません');
  for(const current of [s.session,s.lastResult]){if(!current)continue;if(!['learn','review','topic','quiz'].includes(current.mode)||!Array.isArray(current.ids)||current.ids.length<1||current.ids.length>questions.length||new Set(current.ids).size!==current.ids.length||current.ids.some(id=>!ids.has(id))||!integer(current.index)||current.index>=current.ids.length||!current.responses||typeof current.responses!=='object')throw Error('学習途中のデータが正しくありません');
  for(const[id,r]of Object.entries(current.responses)){const q=questions.find(q=>q.id===id);if(!current.ids.includes(id)||!Array.isArray(r.selected)||new Set(r.selected).size!==r.selected.length||r.selected.length<1||r.selected.some(n=>!integer(n)||n>=q.options.length)||!confidences.includes(r.confidence)||r.correct!==isCorrect(q,r.selected))throw Error('回答データが正しくありません');}}
+ if(s.session?.pending!==undefined){
+  const current=s.session,p=current.pending,q=questions.find(q=>q.id===p?.id);
+  if(!p||!q||p.id!==current.ids[current.index]||current.responses[p.id]||!Array.isArray(p.selected)||!p.selected.length||new Set(p.selected).size!==p.selected.length||p.selected.some(i=>!integer(i)||i>=q.options.length))throw Error('自信の記録待ちデータが正しくありません');
+ }
+ if(s.lastResult?.pending!==undefined)throw Error('結果に未確定の回答があります');
  const notes=s.questionNotes===undefined?{}:s.questionNotes;
  if(typeof notes!=='object'||Array.isArray(notes)||notes===null)throw Error('質問ノートが正しくありません');
  for(const [id,n] of Object.entries(notes)){
@@ -58,4 +63,21 @@ export function questionText(id,note){
 }
 export function questionsText(notes){
  return 'PHP8初級の学習中です。次の問題を初心者向けに、コードの流れと選択肢の違いも含めて説明してください。\n\n'+Object.entries(notes).map(([id,n])=>questionText(id,n)).join('\n\n──────────\n\n');
+}
+
+export function stageAnswer(state,selection){
+ const s=state.session,id=s?.ids[s.index],q=questions.find(q=>q.id===id);
+ if(!q||s.responses[id]||s.pending)throw Error('この回答はすでに受け付けています');
+ if(!Array.isArray(selection)||!selection.length||new Set(selection).size!==selection.length||selection.some(i=>!integer(i)||i>=q.options.length))throw Error('答えを選んでください');
+ s.pending={id,selected:[...selection]};
+ return isCorrect(q,selection);
+}
+export function confirmConfidence(state,confidence,now=Date.now()){
+ const s=state.session,p=s?.pending;
+ if(!p||p.id!==s.ids[s.index]||s.responses[p.id])throw Error('記録待ちの回答がありません');
+ if(!confidences.includes(confidence))throw Error('自信を選んでください');
+ const correct=recordAnswer(state,p.id,p.selected,confidence,now);
+ s.responses[p.id]={selected:[...p.selected],confidence,correct};
+ delete s.pending;
+ return correct;
 }

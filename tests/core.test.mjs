@@ -6,6 +6,38 @@ globalThis.fetch=async()=>({ok:true,json:async()=>content});
 const {questions}=await import('../static/questions.js');
 const {initialState,isCorrect,recordAnswer,needsReview,selectQuestions,validateState}=await import('../static/core.js');
 const {todayReviewIds,saveQuestionNote,questionsText}=await import('../static/core.js');
+const {stageAnswer,confirmConfidence}=await import('../static/core.js');
+
+test('answer first, then confidence: resume pending answers and count each answer once',()=>{
+ const s=initialState(),q=questions[0];
+ s.session={mode:'learn',ids:[q.id],index:0,responses:{}};
+ assert.throws(()=>stageAnswer(s,[]));
+ assert.equal(stageAnswer(s,q.answer),true);
+ assert.equal(Object.keys(s.records).length,0);
+ assert.equal(Object.keys(s.daily).length,0);
+ const resumed=validateState(JSON.parse(JSON.stringify(s)));
+ assert.deepEqual(resumed.session.pending,{id:q.id,selected:q.answer});
+ assert.throws(()=>stageAnswer(resumed,[1]));
+ assert.throws(()=>confirmConfidence(resumed,null));
+ assert.equal(confirmConfidence(resumed,'unsure',1000000000000),true);
+ assert.equal(resumed.records[q.id].attempts,1);
+ assert.equal(needsReview(resumed.records[q.id]),true);
+ assert.equal(resumed.session.pending,undefined);
+ assert.throws(()=>confirmConfidence(resumed,'sure'));
+ assert.equal(resumed.records[q.id].attempts,1);
+ assert.equal(Object.values(resumed.daily).reduce((a,b)=>a+b,0),1);
+ assert.doesNotThrow(()=>validateState(resumed));
+});
+
+test('pending answers reject invalid choices and incompatible backup state',()=>{
+ const s=initialState();s.session={mode:'learn',ids:['q01','q02'],index:0,responses:{}};stageAnswer(s,[0]);
+ for(const pending of [null,{id:'q02',selected:[0]},{id:'q01',selected:[]},{id:'q01',selected:[99]},{id:'q01',selected:[0,0]}]){
+  const bad=structuredClone(s);bad.session.pending=pending;assert.throws(()=>validateState(bad));
+ }
+ const bad=structuredClone(s);bad.lastResult=bad.session;bad.session=null;assert.throws(()=>validateState(bad));
+ const wrong=initialState();wrong.session={mode:'learn',ids:['q01'],index:0,responses:{}};
+ stageAnswer(wrong,[1]);confirmConfidence(wrong,'sure');assert.equal(needsReview(wrong.records.q01),true);
+});
 test('today review excludes older mistakes and removes corrected confident answers',()=>{
  const s=initialState(),now=new Date(2026,9,25,12).getTime();
  recordAnswer(s,'q01',[1],'unknown',now-86400000);
