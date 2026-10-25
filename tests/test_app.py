@@ -63,7 +63,7 @@ class AppTests(unittest.TestCase):
 
     def test_html_assets_and_public_questions(self):
         self.assertEqual(self.client.get('/').status_code, 200)
-        self.assertEqual(len(self.client.get('/api/questions').get_json()['questions']), 30)
+        self.assertEqual(len(self.client.get('/api/questions').get_json()['questions']), 100)
         for asset in ['app.js', 'core.js', 'questions.js', 'sync.js', 'style.css', 'icon-192.png', 'icon-512.png']:
             with self.client.get('/static/' + asset) as response:
                 self.assertEqual(response.status_code, 200)
@@ -74,6 +74,15 @@ class AppTests(unittest.TestCase):
 
     def test_private_state_is_not_cacheable(self):
         self.assertEqual(self.client.get('/api/state').headers['Cache-Control'], 'no-store')
+
+    def test_new_question_progress_roundtrip(self):
+        info = self.client.get('/api/state').get_json()
+        payload = state()
+        payload['records']['q100'] = {'attempts': 1, 'correct': True, 'confidence': 'unsure', 'streak': 0, 'lastAt': 1000, 'dueAt': 86401000}
+        payload['questionNotes'] = {'q100': {'note': '追記', 'selected': [0], 'confidence': 'unsure', 'savedAt': 1000}}
+        payload['session'] = {'mode': 'review', 'ids': ['q100'], 'index': 0, 'responses': {'q100': {'selected': [0], 'confidence': 'unsure', 'correct': True}}}
+        self.assertEqual(self.put(self.client, info['csrf'], payload=payload).status_code, 200)
+        self.assertEqual(self.client.get('/api/state').get_json()['state'], payload)
 
 
 if __name__ == '__main__':

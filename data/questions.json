@@ -24,7 +24,8 @@
         "CSSは見た目を指定するもので、PHPの実行場所ではありません。",
         "画像ファイル自体がPHPを実行するわけではありません。"
       ],
-      "lines": []
+      "lines": [],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q02",
@@ -54,7 +55,8 @@
         "$scoreに整数3を保存します。",
         "今の値3に2を足し、計算結果5を$scoreへ保存し直します。",
         "$scoreの現在の値5を表示します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q03",
@@ -83,7 +85,8 @@
       "lines": [
         "3つの文字列を配列に保存します。キーは左から0、1、2です。",
         "キー1の値、みかんを取り出して表示します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q04",
@@ -115,7 +118,8 @@
         "引用符で囲んだ12を保存します。型は文字列です。",
         "trueを保存します。型は真偽値です。",
         "単一引用符で囲んだhelloを保存します。型は文字列です。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q05",
@@ -144,7 +148,8 @@
       "lines": [
         "nameとageというキーに、それぞれHanaと20を対応させます。",
         "nameキーに対応するHanaを表示します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q06",
@@ -172,7 +177,8 @@
       ],
       "lines": [
         "===で値と型を比較します。整数7と文字列7は異なるため、var_dumpはbool(false)と表示します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q07",
@@ -201,7 +207,8 @@
       "lines": [
         "$nameに文字列Hanaを保存します。",
         ".でHi, と$nameの値をつなぎ、Hi, Hanaと表示します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q08",
@@ -229,7 +236,8 @@
       ],
       "lines": [
         "%は割り算の余りです。14を4で割った余り2を表示します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q09",
@@ -262,7 +270,8 @@
         "true側の処理が終わります。今回はelse側へ進みません。",
         "条件がfalseの場合の処理なので、今回は実行しません。",
         "ifとelseのまとまりを閉じます。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q10",
@@ -292,7 +301,8 @@
         "0で開始し、3未満の間繰り返します。各回の後に1増やします。",
         "0、1、2の各回で値を表示します。空白や改行は付けません。",
         "この回を終えて$i++、条件確認へ進みます。3になると終了します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q11",
@@ -324,7 +334,8 @@
         "各回で合計へ足します。合計は2、6、12と変わります。",
         "次の要素へ進み、要素がなくなると繰り返しを終えます。",
         "最終的な合計12を表示します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q12",
@@ -357,7 +368,8 @@
         "整数2が一致するので、文字列twoを結果にします。",
         "ほかが一致しない場合の結果です。今回は使いません。",
         "match式を閉じ、結果のtwoを表示します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q13",
@@ -385,7 +397,8 @@
       ],
       "lines": [
         "配列の3要素をcountで数え、その戻り値3を表示します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q14",
@@ -413,7 +426,8 @@
       ],
       "lines": [
         "strlenでPHP8のバイト数を調べます。このASCII文字列は4バイトなので4を表示します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q15",
@@ -441,7 +455,8 @@
       ],
       "lines": [
         "カンマでred,blueを分割し、redとblueを含む配列を$partsに保存します。この行だけでは画面には表示しません。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q16",
@@ -472,7 +487,8 @@
         "呼び出されたときに$nを2倍して返します。return自体は表示しません。",
         "関数の定義を閉じます。",
         "twiceに4を渡します。戻り値8をechoで表示します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q17",
@@ -503,7 +519,8 @@
         "Hello と$nameを連結して呼び出し元へ返します。",
         "関数の定義を閉じます。",
         "引数なしで呼び出すので、戻り値Hello Guestを表示します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q18",
@@ -536,7 +553,8 @@
         "$valueに5を保存します。",
         "5を渡して呼び出します。関数内の$nだけが6になります。",
         "呼び出し元の$valueは5なので、5を表示します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q19",
@@ -565,7 +583,8 @@
       "lines": [
         "2026年11月16日を表す日付オブジェクトを作ります。",
         "Y-m-dという書式で2026-11-16という文字列にして表示します。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q20",
@@ -595,7 +614,8 @@
         "16日の日付オブジェクトを$dへ保存します。",
         "1日後の新しいオブジェクトを作り、$nextへ保存します。$dは変わりません。",
         "$nextではなく$dの日の部分を表示するため16です。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q21",
@@ -621,7 +641,8 @@
         "$_SERVERはサーバーや実行環境などの情報を扱います。",
         "$_COOKIEはブラウザから送られたCookieを扱います。"
       ],
-      "lines": []
+      "lines": [],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q22",
@@ -647,7 +668,8 @@
         "整数への変換は任意の文章を保って表示する方法ではありません。",
         "逆順にしてもHTMLの特殊文字は安全な形に変換されません。"
       ],
-      "lines": []
+      "lines": [],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q23",
@@ -673,7 +695,8 @@
         "start_cookieという標準のセッション開始関数はありません。",
         "new_sessionという標準のセッション開始関数はありません。"
       ],
-      "lines": []
+      "lines": [],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q24",
@@ -699,7 +722,8 @@
         "HTMLのタグはSQLの入力値を安全に扱う仕組みではありません。",
         "表示するだけでは、SQLと入力値を分離できません。"
       ],
-      "lines": []
+      "lines": [],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q25",
@@ -725,7 +749,8 @@
         "commitはトランザクションの変更を確定します。",
         "beginTransactionはトランザクションを開始します。"
       ],
-      "lines": []
+      "lines": [],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q26",
@@ -754,7 +779,8 @@
       "lines": [
         "Userという空のクラスを定義します。",
         "空欄にnewを入れると、Userのインスタンスを作って$userに保存できます。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q27",
@@ -785,7 +811,8 @@
         "nameを外部からアクセス可能なpublicプロパティとして定義します。",
         "passwordをクラスの内部用のprivateプロパティとして定義します。",
         "クラスの定義を閉じます。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q28",
@@ -811,7 +838,8 @@
         "__createはPHPのコンストラクタ名ではありません。",
         "__mainはPHPのコンストラクタ名ではありません。"
       ],
-      "lines": []
+      "lines": [],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q29",
@@ -839,7 +867,8 @@
       ],
       "lines": [
         "空欄をextendsにすると、Userクラスを継承するAdminクラスを定義できます。"
-      ]
+      ],
+      "learningPoint": "基本の確認"
     },
     {
       "id": "q30",
@@ -872,7 +901,2097 @@
         "Exceptionを受け取り、$eで参照できるようにします。",
         "catch内でBを表示します。",
         "catchの処理を終えます。"
+      ],
+      "learningPoint": "基本の確認"
+    },
+    {
+      "id": "q31",
+      "topic": "intro",
+      "learningPoint": "PHPタグ",
+      "title": "設定に左右されにくい、通常のPHP開始タグはどれですか？",
+      "code": "",
+      "options": [
+        "<php>",
+        "<?php",
+        "<script php>",
+        "<?start"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "標準の開始タグです。",
+      "easy": "PHP部分の始まりを明示する記号です。",
+      "trace": "PHP部分の始まりを明示する記号です。",
+      "reference": "https://www.php.net/manual/ja/language.basic-syntax.phptags.php",
+      "optionReasons": [
+        "HTML風のタグでは開始しません。",
+        "標準の開始タグです。",
+        "PHPの開始タグではありません。",
+        "PHPの開始タグではありません。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q32",
+      "topic": "intro",
+      "learningPoint": "CLI",
+      "title": "PHPの実行方法について正しいものをすべて選んでください。",
+      "code": "",
+      "options": [
+        "必ずブラウザが必要",
+        "必ずデータベースが必要",
+        "コマンドラインでも実行できる",
+        "Webページの生成にも使える"
+      ],
+      "answer": [
+        2,
+        3
+      ],
+      "explanation": "CLI版PHPはターミナルで実行できます。 サーバー上でHTMLなどを生成できます。",
+      "easy": "Web以外に、ファイル処理などのスクリプトにも使えます。",
+      "trace": "Web以外に、ファイル処理などのスクリプトにも使えます。",
+      "reference": "https://www.php.net/manual/ja/intro-whatcando.php",
+      "optionReasons": [
+        "CLIではブラウザなしで動きます。",
+        "DBを使わない処理も書けます。",
+        "CLI版PHPはターミナルで実行できます。",
+        "サーバー上でHTMLなどを生成できます。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q33",
+      "topic": "basics",
+      "learningPoint": "文字列の展開",
+      "title": "表示結果はどれですか？",
+      "code": "$city = \"Osaka\";\necho '$city' . \"/$city\";",
+      "options": [
+        "$city/Osaka",
+        "Osaka/Osaka",
+        "$city/$city",
+        "エラー"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "単一引用符では展開せず、二重引用符では展開します。",
+      "easy": "引用符の種類で、変数を値に置き換えるかが変わります。",
+      "trace": "変数にOsakaを保存します。\n前半は文字通り、後半は値を入れて連結します。",
+      "reference": "https://www.php.net/manual/ja/language.types.string.php",
+      "optionReasons": [
+        "単一引用符では展開せず、二重引用符では展開します。",
+        "最初の文字列は単一引用符です。",
+        "後半は二重引用符なので展開します。",
+        "どちらも有効な文字列です。"
+      ],
+      "lines": [
+        "変数にOsakaを保存します。",
+        "前半は文字通り、後半は値を入れて連結します。"
       ]
+    },
+    {
+      "id": "q34",
+      "topic": "basics",
+      "learningPoint": "定数",
+      "title": "定数について正しいものをすべて選んでください。",
+      "code": "",
+      "options": [
+        "読むときに必ず$を付ける",
+        "定義後に通常の代入で変更できる",
+        "constで定義できる",
+        "defineで定義できる"
+      ],
+      "answer": [
+        2,
+        3
+      ],
+      "explanation": "const LIMIT = 3;のように定義できます。 define(\"LIMIT\", 3);でも定義できます。",
+      "easy": "定数は、名前を付けた変更しない値です。",
+      "trace": "定数は、名前を付けた変更しない値です。",
+      "reference": "https://www.php.net/manual/ja/language.constants.php",
+      "optionReasons": [
+        "通常の定数名に$は付けません。",
+        "定数は再代入する変数ではありません。",
+        "const LIMIT = 3;のように定義できます。",
+        "define(\"LIMIT\", 3);でも定義できます。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q35",
+      "topic": "basics",
+      "learningPoint": "真偽値への変換",
+      "title": "条件式でfalseとして扱われる値をすべて選んでください。",
+      "code": "",
+      "options": [
+        "\"false\"",
+        "\"0\"",
+        "[]",
+        "-2"
+      ],
+      "answer": [
+        1,
+        2
+      ],
+      "explanation": "文字列\"0\"はfalseとして扱われます。 空配列はfalseとして扱われます。",
+      "easy": "見た目の意味ではなく、型ごとの変換規則で考えます。",
+      "trace": "見た目の意味ではなく、型ごとの変換規則で考えます。",
+      "reference": "https://www.php.net/manual/ja/language.types.boolean.php",
+      "optionReasons": [
+        "空でも\"0\"でもない文字列はtrueです。",
+        "文字列\"0\"はfalseとして扱われます。",
+        "空配列はfalseとして扱われます。",
+        "0以外の整数は負数でもtrueです。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q36",
+      "topic": "basics",
+      "learningPoint": "nullとisset",
+      "title": "表示結果はどれですか？",
+      "code": "$value = null;\nvar_dump(isset($value));",
+      "options": [
+        "bool(true)",
+        "NULL",
+        "bool(false)",
+        "エラー"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "issetは未定義またはnullならfalseです。",
+      "easy": "「名前がある」ことと「null以外の値がある」ことは別です。",
+      "trace": "nullを保存します。\nnull以外の値がないのでfalseを表示します。",
+      "reference": "https://www.php.net/manual/ja/function.isset.php",
+      "optionReasons": [
+        "値がnullなのでissetはtrueになりません。",
+        "表示するのは変数自体ではなく判定結果です。",
+        "issetは未定義またはnullならfalseです。",
+        "nullをissetで調べるのは有効です。"
+      ],
+      "lines": [
+        "nullを保存します。",
+        "null以外の値がないのでfalseを表示します。"
+      ]
+    },
+    {
+      "id": "q37",
+      "topic": "basics",
+      "learningPoint": "配列の追加キー",
+      "title": "追加された値のキーはどれですか？",
+      "code": "$a = [4 => \"pen\"];\n$a[] = \"book\";",
+      "options": [
+        "0",
+        "1",
+        "4",
+        "5"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "最大の整数キー4の次、5が使われます。",
+      "easy": "空の[]は末尾への追加です。今回はキー4の次を使います。",
+      "trace": "整数キー4で要素を作ります。\n次の整数キー5にbookを追加します。",
+      "reference": "https://www.php.net/manual/ja/language.types.array.php",
+      "optionReasons": [
+        "既存の整数キー4があるため0には戻りません。",
+        "要素の個数を次のキーにはしません。",
+        "既存の4を上書きする操作ではありません。",
+        "最大の整数キー4の次、5が使われます。"
+      ],
+      "lines": [
+        "整数キー4で要素を作ります。",
+        "次の整数キー5にbookを追加します。"
+      ]
+    },
+    {
+      "id": "q38",
+      "topic": "basics",
+      "learningPoint": "配列要素の削除",
+      "title": "表示結果はどれですか？",
+      "code": "$a = [0, 1, 2];\nunset($a[1]);\necho $a[2];",
+      "options": [
+        "2",
+        "3",
+        "1",
+        "エラー"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "キー1を削除しても、キー2は残ります。",
+      "easy": "unsetで削除しただけでは、残ったキーは振り直されません。",
+      "trace": "キー0、1、2の配列です。\nキー1だけ削除します。\n残っているキー2の値2を表示します。",
+      "reference": "https://www.php.net/manual/ja/function.unset.php",
+      "optionReasons": [
+        "キー1を削除しても、キー2は残ります。",
+        "削除しても値が増えることはありません。",
+        "1は削除したキーの値です。",
+        "キー2は存在しています。"
+      ],
+      "lines": [
+        "キー0、1、2の配列です。",
+        "キー1だけ削除します。",
+        "残っているキー2の値2を表示します。"
+      ]
+    },
+    {
+      "id": "q39",
+      "topic": "basics",
+      "learningPoint": "多次元配列",
+      "title": "表示結果はどれですか？",
+      "code": "$users = [[\"name\" => \"Aki\"], [\"name\" => \"Ren\"]];\necho $users[1][\"name\"];",
+      "options": [
+        "Aki",
+        "Ren",
+        "name",
+        "エラー"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "外側のキー1、内側のnameでRenを取得します。",
+      "easy": "外側の箱を選んでから、その中のキーを選びます。",
+      "trace": "配列の中に2つの連想配列を入れます。\n2番目のユーザーのnameを表示します。",
+      "reference": "https://www.php.net/manual/ja/language.types.array.php",
+      "optionReasons": [
+        "Akiは外側のキー0にあります。",
+        "外側のキー1、内側のnameでRenを取得します。",
+        "nameは値を探すキーです。",
+        "指定したキーは両方存在します。"
+      ],
+      "lines": [
+        "配列の中に2つの連想配列を入れます。",
+        "2番目のユーザーのnameを表示します。"
+      ]
+    },
+    {
+      "id": "q40",
+      "topic": "basics",
+      "learningPoint": "変数名の大文字小文字",
+      "title": "表示結果はどれですか？",
+      "code": "$item = 4;\n$Item = 9;\necho \"$item/$Item\";",
+      "options": [
+        "9/9",
+        "4/4",
+        "4/9",
+        "エラー"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "変数名は大文字と小文字を区別します。",
+      "easy": "同じつづりでも大文字が違うと、別の箱になります。",
+      "trace": "小文字の変数へ4を保存します。\n大文字で始まる別の変数へ9を保存します。\nそれぞれの値を/で区切って表示します。",
+      "reference": "https://www.php.net/manual/ja/language.variables.basics.php",
+      "optionReasons": [
+        "$itemと$Itemは別の変数です。",
+        "$Itemには9が入っています。",
+        "変数名は大文字と小文字を区別します。",
+        "両方とも定義されています。"
+      ],
+      "lines": [
+        "小文字の変数へ4を保存します。",
+        "大文字で始まる別の変数へ9を保存します。",
+        "それぞれの値を/で区切って表示します。"
+      ]
+    },
+    {
+      "id": "q41",
+      "topic": "operators",
+      "learningPoint": "null合体演算子",
+      "title": "表示結果はどれですか？",
+      "code": "$count = 0;\necho $count ?? \"guest\";",
+      "options": [
+        "guest",
+        "0",
+        "空文字列",
+        "エラー"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "0はnullではないので、そのまま使われます。",
+      "easy": "??は未定義またはnullのときに、右の予備の値を使います。",
+      "trace": "0を保存します。\nnullではないため0を表示します。",
+      "reference": "https://www.php.net/manual/ja/language.operators.comparison.php",
+      "optionReasons": [
+        "??は0を欠損扱いにしません。",
+        "0はnullではないので、そのまま使われます。",
+        "空文字列へ変換する処理はありません。",
+        "有効な式です。"
+      ],
+      "lines": [
+        "0を保存します。",
+        "nullではないため0を表示します。"
+      ]
+    },
+    {
+      "id": "q42",
+      "topic": "operators",
+      "learningPoint": "三項演算子",
+      "title": "表示結果はどれですか？",
+      "code": "$ok = false;\necho $ok ? \"yes\" : \"no\";",
+      "options": [
+        "yes",
+        "true",
+        "no",
+        "エラー"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "falseなので:の右側のnoを選びます。",
+      "easy": "条件 ? 成立時の値 : 不成立時の値、という順です。",
+      "trace": "条件用の値をfalseにします。\n不成立側のnoを表示します。",
+      "reference": "https://www.php.net/manual/ja/language.operators.comparison.php",
+      "optionReasons": [
+        "条件がfalseなのでyesではありません。",
+        "条件式ではなく選ばれた文字列を表示します。",
+        "falseなので:の右側のnoを選びます。",
+        "三項演算子として有効です。"
+      ],
+      "lines": [
+        "条件用の値をfalseにします。",
+        "不成立側のnoを表示します。"
+      ]
+    },
+    {
+      "id": "q43",
+      "topic": "operators",
+      "learningPoint": "論理演算子の優先順位",
+      "title": "表示結果はどれですか？",
+      "code": "$a = true and false;\n$b = true && false;\necho (int)$a . \"/\" . (int)$b;",
+      "options": [
+        "1/0",
+        "0/0",
+        "1/1",
+        "0/1"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "andは=より低く、&&は=より高い優先順位です。",
+      "easy": "同じ「かつ」でも、代入と組み合わせたときの順序が違います。",
+      "trace": "先に$a=trueを評価するので$aはtrueです。\n&&を評価してfalseを$bに代入します。\n整数に変換し1/0と表示します。",
+      "reference": "https://www.php.net/manual/ja/language.operators.logical.php",
+      "optionReasons": [
+        "andは=より低く、&&は=より高い優先順位です。",
+        "$aには先にtrueが代入されます。",
+        "$bはtrue&&falseのfalseです。",
+        "両方の評価順が逆です。"
+      ],
+      "lines": [
+        "先に$a=trueを評価するので$aはtrueです。",
+        "&&を評価してfalseを$bに代入します。",
+        "整数に変換し1/0と表示します。"
+      ]
+    },
+    {
+      "id": "q44",
+      "topic": "operators",
+      "learningPoint": "短絡評価",
+      "title": "表示結果はどれですか？",
+      "code": "$x = 0;\nfalse && ($x = 1);\necho $x;",
+      "options": [
+        "1",
+        "false",
+        "エラー",
+        "0"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "左辺がfalseなので右辺を評価せず、$xは0です。",
+      "easy": "&&は左がfalseなら、右を確認しなくても全体がfalseです。",
+      "trace": "初期値は0です。\n左辺がfalseなので代入を飛ばします。\n変わらない0を表示します。",
+      "reference": "https://www.php.net/manual/ja/language.operators.logical.php",
+      "optionReasons": [
+        "右辺の代入は実行しません。",
+        "表示するのは$xです。",
+        "有効な短絡評価です。",
+        "左辺がfalseなので右辺を評価せず、$xは0です。"
+      ],
+      "lines": [
+        "初期値は0です。",
+        "左辺がfalseなので代入を飛ばします。",
+        "変わらない0を表示します。"
+      ]
+    },
+    {
+      "id": "q45",
+      "topic": "operators",
+      "learningPoint": "前置インクリメント",
+      "title": "表示結果はどれですか？",
+      "code": "$n = 4;\necho ++$n;\necho \"/\" . $n;",
+      "options": [
+        "4/5",
+        "5/5",
+        "5/6",
+        "4/4"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "先に5へ増やし、両方で5を表示します。",
+      "easy": "++が前なら、増やしてから値を使います。",
+      "trace": "4から始めます。\n5へ増やして5を表示します。\n現在の値5を追加表示します。",
+      "reference": "https://www.php.net/manual/ja/language.operators.increment.php",
+      "optionReasons": [
+        "++$nは増やした後の値を使います。",
+        "先に5へ増やし、両方で5を表示します。",
+        "増やす処理は1回だけです。",
+        "インクリメントで値は増えます。"
+      ],
+      "lines": [
+        "4から始めます。",
+        "5へ増やして5を表示します。",
+        "現在の値5を追加表示します。"
+      ]
+    },
+    {
+      "id": "q46",
+      "topic": "operators",
+      "learningPoint": "宇宙船演算子",
+      "title": "表示結果はどれですか？",
+      "code": "echo 2 <=> 5;",
+      "options": [
+        "1",
+        "0",
+        "-1",
+        "bool(true)"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "整数2は5より小さいため-1です。",
+      "easy": "<=>は小さい・等しい・大きいを比較する演算子です。",
+      "trace": "2は5より小さいため-1を表示します。",
+      "reference": "https://www.php.net/manual/ja/language.operators.comparison.php",
+      "optionReasons": [
+        "左が大きい場合に正の値です。",
+        "等しい場合に0です。",
+        "整数2は5より小さいため-1です。",
+        "<=>は真偽値ではなく整数を返します。"
+      ],
+      "lines": [
+        "2は5より小さいため-1を表示します。"
+      ]
+    },
+    {
+      "id": "q47",
+      "topic": "operators",
+      "learningPoint": "PHP8の比較",
+      "title": "PHP8でtrueになる式をすべて選んでください。",
+      "code": "",
+      "options": [
+        "0 == \"abc\"",
+        "8 === \"8\"",
+        "8 == \"8\"",
+        "8 !== \"8\""
+      ],
+      "answer": [
+        2,
+        3
+      ],
+      "explanation": "数値形式の文字列との弱い比較では等しくなります。 型が異なるため厳密には等しくありません。",
+      "easy": "弱い比較と厳密な比較を区別し、PHP7の古い規則と混同しないようにします。",
+      "trace": "弱い比較と厳密な比較を区別し、PHP7の古い規則と混同しないようにします。",
+      "reference": "https://www.php.net/manual/ja/language.operators.comparison.php",
+      "optionReasons": [
+        "PHP8では非数値文字列abcと0は等しくなりません。",
+        "===は型も比較するのでfalseです。",
+        "数値形式の文字列との弱い比較では等しくなります。",
+        "型が異なるため厳密には等しくありません。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q48",
+      "topic": "control",
+      "learningPoint": "while",
+      "title": "表示結果はどれですか？",
+      "code": "$n = 2;\nwhile ($n < 6) {\n    echo $n;\n    $n += 2;\n}",
+      "options": [
+        "246",
+        "24",
+        "024",
+        "無限ループ"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "2、4を表示し、6で終了します。",
+      "easy": "条件確認→本体→値の更新の順に追います。",
+      "trace": "2で開始します。\n6未満なら本体へ進みます。\n2と4を順に表示します。\n各回の末尾で2増やします。\n条件確認へ戻り、6なら終了します。",
+      "reference": "https://www.php.net/manual/ja/control-structures.while.php",
+      "optionReasons": [
+        "6は条件を満たさないので表示しません。",
+        "2、4を表示し、6で終了します。",
+        "初期値は0ではありません。",
+        "毎回2増えるため終了します。"
+      ],
+      "lines": [
+        "2で開始します。",
+        "6未満なら本体へ進みます。",
+        "2と4を順に表示します。",
+        "各回の末尾で2増やします。",
+        "条件確認へ戻り、6なら終了します。"
+      ]
+    },
+    {
+      "id": "q49",
+      "topic": "control",
+      "learningPoint": "do-while",
+      "title": "表示結果はどれですか？",
+      "code": "$n = 7;\ndo {\n    echo $n;\n} while ($n < 3);",
+      "options": [
+        "何も表示しない",
+        "0",
+        "7",
+        "無限ループ"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "条件確認前に一度だけ7を表示します。",
+      "easy": "do-whileは、後から条件を確認します。",
+      "trace": "7を保存します。\n条件確認前に本体へ進みます。\n7を表示します。\n7<3はfalseなので終了します。",
+      "reference": "https://www.php.net/manual/ja/control-structures.do.while.php",
+      "optionReasons": [
+        "do-whileは最初の本体を実行します。",
+        "$nは7です。",
+        "条件確認前に一度だけ7を表示します。",
+        "最初の条件確認でfalseになり終了します。"
+      ],
+      "lines": [
+        "7を保存します。",
+        "条件確認前に本体へ進みます。",
+        "7を表示します。",
+        "7<3はfalseなので終了します。"
+      ]
+    },
+    {
+      "id": "q50",
+      "topic": "control",
+      "learningPoint": "continue",
+      "title": "表示結果はどれですか？",
+      "code": "$sum = 0;\nforeach ([2, 3, 4] as $v) {\n    if ($v === 3) continue;\n    $sum += $v;\n}\necho $sum;",
+      "options": [
+        "6",
+        "2",
+        "9",
+        "12"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "3を飛ばし、2+4の6になります。",
+      "easy": "continueはその回の残りを飛ばして次の回へ進みます。",
+      "trace": "合計を0にします。\n2、3、4を順に取り出します。\n3の回だけ次の回へ進みます。\n2と4だけを加算します。\n繰り返しを終えます。\n6を表示します。",
+      "reference": "https://www.php.net/manual/ja/control-structures.continue.php",
+      "optionReasons": [
+        "3を飛ばし、2+4の6になります。",
+        "4も加算されます。",
+        "3は加算されません。",
+        "掛け算ではなく加算です。"
+      ],
+      "lines": [
+        "合計を0にします。",
+        "2、3、4を順に取り出します。",
+        "3の回だけ次の回へ進みます。",
+        "2と4だけを加算します。",
+        "繰り返しを終えます。",
+        "6を表示します。"
+      ]
+    },
+    {
+      "id": "q51",
+      "topic": "control",
+      "learningPoint": "break",
+      "title": "表示結果はどれですか？",
+      "code": "foreach ([3, 6, 9] as $v) {\n    if ($v > 4) break;\n    echo $v;\n}",
+      "options": [
+        "369",
+        "36",
+        "何も表示しない",
+        "3"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "3を表示した後、6の回でループを抜けます。",
+      "easy": "breakはループ自体を終了します。",
+      "trace": "各値を順に取り出します。\n6の回で条件成立、ループを抜けます。\n3の回だけ表示します。\nbreakまたは要素の終わりで終了します。",
+      "reference": "https://www.php.net/manual/ja/control-structures.break.php",
+      "optionReasons": [
+        "6で終了するため9へ進みません。",
+        "6を表示する前に終了します。",
+        "最初の3は表示します。",
+        "3を表示した後、6の回でループを抜けます。"
+      ],
+      "lines": [
+        "各値を順に取り出します。",
+        "6の回で条件成立、ループを抜けます。",
+        "3の回だけ表示します。",
+        "breakまたは要素の終わりで終了します。"
+      ]
+    },
+    {
+      "id": "q52",
+      "topic": "control",
+      "learningPoint": "switchのフォールスルー",
+      "title": "表示結果はどれですか？",
+      "code": "switch (2) {\n    case 2: echo \"X\";\n    case 3: echo \"Y\"; break;\n}",
+      "options": [
+        "X",
+        "XY",
+        "Y",
+        "エラー"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Xを表示後、次のcaseのYも表示してbreakします。",
+      "easy": "switchは一致後、breakまで下へ処理が続きます。",
+      "trace": "整数2に対応するcaseを探します。\n一致するのでXを表示します。\nbreakまで続けてYを表示します。\nswitchを終了します。",
+      "reference": "https://www.php.net/manual/ja/control-structures.switch.php",
+      "optionReasons": [
+        "最初のcaseにbreakがないので次も実行します。",
+        "Xを表示後、次のcaseのYも表示してbreakします。",
+        "最初のcaseも実行します。",
+        "breakの省略自体は構文エラーではありません。"
+      ],
+      "lines": [
+        "整数2に対応するcaseを探します。",
+        "一致するのでXを表示します。",
+        "breakまで続けてYを表示します。",
+        "switchを終了します。"
+      ]
+    },
+    {
+      "id": "q53",
+      "topic": "control",
+      "learningPoint": "matchの厳密比較",
+      "title": "表示結果はどれですか？",
+      "code": "$v = \"3\";\necho match ($v) {\n    3 => \"number\",\n    default => \"string\",\n};",
+      "options": [
+        "number",
+        "エラー",
+        "string",
+        "空文字列"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "文字列\"3\"は整数3に一致せずdefaultを使います。",
+      "easy": "matchでは見た目が同じでも型が違えば別です。",
+      "trace": "文字列3を保存します。\n型と値が一致する分岐を探します。\n整数3なので一致しません。\ndefaultのstringを選びます。\n選んだ値を表示します。",
+      "reference": "https://www.php.net/manual/ja/control-structures.match.php",
+      "optionReasons": [
+        "文字列と整数は厳密には一致しません。",
+        "defaultがあるので処理できます。",
+        "文字列\"3\"は整数3に一致せずdefaultを使います。",
+        "defaultはstringを返します。"
+      ],
+      "lines": [
+        "文字列3を保存します。",
+        "型と値が一致する分岐を探します。",
+        "整数3なので一致しません。",
+        "defaultのstringを選びます。",
+        "選んだ値を表示します。"
+      ]
+    },
+    {
+      "id": "q54",
+      "topic": "control",
+      "learningPoint": "elseifの順序",
+      "title": "表示結果はどれですか？",
+      "code": "$n = 4;\nif ($n < 10) {\n    echo \"small\";\n} elseif ($n < 20) {\n    echo \"medium\";\n}",
+      "options": [
+        "small",
+        "medium",
+        "smallmedium",
+        "何も表示しない"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "最初の条件が成立すると後のelseifを評価しません。",
+      "easy": "範囲が重なる条件では、書いた順が大切です。",
+      "trace": "4を保存します。\n4<10はtrueです。\nsmallを表示します。\nすでに成立したので評価しません。\n今回は実行しません。\n分岐を閉じます。",
+      "reference": "https://www.php.net/manual/ja/control-structures.elseif.php",
+      "optionReasons": [
+        "最初の条件が成立すると後のelseifを評価しません。",
+        "後の条件も真ですが、すでに分岐が決まっています。",
+        "実行するのは一つの分岐です。",
+        "最初の分岐で表示します。"
+      ],
+      "lines": [
+        "4を保存します。",
+        "4<10はtrueです。",
+        "smallを表示します。",
+        "すでに成立したので評価しません。",
+        "今回は実行しません。",
+        "分岐を閉じます。"
+      ]
+    },
+    {
+      "id": "q55",
+      "topic": "control",
+      "learningPoint": "foreachのキーと値",
+      "title": "表示結果はどれですか？",
+      "code": "$a = [\"red\" => 2, \"blue\" => 3];\nforeach ($a as $k => $v) {\n    echo \"$k:$v;\";\n}",
+      "options": [
+        "2:3;",
+        "red:blue;",
+        "0:2;1:3;",
+        "red:2;blue:3;"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "$kにキー、$vに値が入ります。",
+      "easy": "as $k => $vの左がキー、右が値です。",
+      "trace": "文字列キーの配列を作ります。\n登録順にキーと値を受け取ります。\nキー:値;という形で表示します。\n全要素を処理して終了します。",
+      "reference": "https://www.php.net/manual/ja/control-structures.foreach.php",
+      "optionReasons": [
+        "キーと値を各要素ごとに出します。",
+        "値も表示します。",
+        "文字列キーを使っています。",
+        "$kにキー、$vに値が入ります。"
+      ],
+      "lines": [
+        "文字列キーの配列を作ります。",
+        "登録順にキーと値を受け取ります。",
+        "キー:値;という形で表示します。",
+        "全要素を処理して終了します。"
+      ]
+    },
+    {
+      "id": "q56",
+      "topic": "control",
+      "learningPoint": "matchの網羅性",
+      "title": "PHP8のmatchについて正しいものをすべて選んでください。",
+      "code": "",
+      "options": [
+        "必ずbreakが必要",
+        "値を返す式として使える",
+        "一致もdefaultもなければUnhandledMatchErrorになる",
+        "常に==で比較する"
+      ],
+      "answer": [
+        1,
+        2
+      ],
+      "explanation": "選択されたアームの値が式の結果になります。 どこにも一致しない場合はエラーが投げられます。",
+      "easy": "matchは「値を選ぶ式」です。選べないケースにも備えます。",
+      "trace": "matchは「値を選ぶ式」です。選べないケースにも備えます。",
+      "reference": "https://www.php.net/manual/ja/control-structures.match.php",
+      "optionReasons": [
+        "次のアームへ流れないためbreakは不要です。",
+        "選択されたアームの値が式の結果になります。",
+        "どこにも一致しない場合はエラーが投げられます。",
+        "厳密な===相当で比較します。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q57",
+      "topic": "control",
+      "learningPoint": "forの更新式",
+      "title": "表示結果はどれですか？",
+      "code": "for ($i = 5; $i > 3; $i--) {\n    echo $i;\n}",
+      "options": [
+        "543",
+        "54",
+        "432",
+        "5"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "5、4を表示し、3で終了します。",
+      "easy": "forは初期化、条件確認、本体、更新を分けて追います。",
+      "trace": "5で開始し、3より大きい間、毎回1減らします。\n5と4を表示します。\n更新して次の条件確認へ進みます。",
+      "reference": "https://www.php.net/manual/ja/control-structures.for.php",
+      "optionReasons": [
+        "3は条件を満たさず表示しません。",
+        "5、4を表示し、3で終了します。",
+        "開始値は5で、更新は本体の後です。",
+        "4も条件を満たします。"
+      ],
+      "lines": [
+        "5で開始し、3より大きい間、毎回1減らします。",
+        "5と4を表示します。",
+        "更新して次の条件確認へ進みます。"
+      ]
+    },
+    {
+      "id": "q58",
+      "topic": "builtin",
+      "learningPoint": "strposの0とfalse",
+      "title": "先頭で見つかった場合も正しく「発見」と判定する条件はどれですか？",
+      "code": "$p = strpos(\"sunflower\", \"sun\");",
+      "options": [
+        "if ($p)",
+        "if ($p == false)",
+        "if ($p !== false)",
+        "if ($p > 0)"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "整数0と失敗のfalseを厳密に区別します。",
+      "easy": "検索失敗と先頭の0を取り違えないようにします。",
+      "trace": "先頭に見つかるので整数0を返します。",
+      "reference": "https://www.php.net/manual/ja/function.strpos.php",
+      "optionReasons": [
+        "位置0は条件式ではfalseになります。",
+        "0とfalseを弱く比較すると等しくなります。",
+        "整数0と失敗のfalseを厳密に区別します。",
+        "先頭の位置0を除外してしまいます。"
+      ],
+      "lines": [
+        "先頭に見つかるので整数0を返します。"
+      ]
+    },
+    {
+      "id": "q59",
+      "topic": "builtin",
+      "learningPoint": "sortのキー",
+      "title": "表示結果はどれですか？",
+      "code": "$a = [\"b\" => 8, \"a\" => 2];\nsort($a);\necho $a[0] . \"/\" . $a[1];",
+      "options": [
+        "2/8",
+        "8/2",
+        "a/b",
+        "エラー"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "値を昇順にし、キーを0から振り直します。",
+      "easy": "sortは値を並べ替えるだけでなく、元のキーも失います。",
+      "trace": "文字列キーと整数値の配列を作ります。\n値を2、8に並べ、キーを0、1にします。\n順に2/8を表示します。",
+      "reference": "https://www.php.net/manual/ja/function.sort.php",
+      "optionReasons": [
+        "値を昇順にし、キーを0から振り直します。",
+        "昇順なので2が先です。",
+        "表示するのは値です。",
+        "sort後は数値キー0、1が存在します。"
+      ],
+      "lines": [
+        "文字列キーと整数値の配列を作ります。",
+        "値を2、8に並べ、キーを0、1にします。",
+        "順に2/8を表示します。"
+      ]
+    },
+    {
+      "id": "q60",
+      "topic": "builtin",
+      "learningPoint": "配列と文字列の変換",
+      "title": "表示結果はどれですか？",
+      "code": "echo implode(\"-\", [\"a\", \"b\", \"c\"]);",
+      "options": [
+        "a,b,c",
+        "abc",
+        "3",
+        "a-b-c"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "implodeは配列の値を指定文字でつなぎます。",
+      "easy": "explodeは分割、implodeは結合、と対にして覚えます。",
+      "trace": "3つの文字列をハイフンでつなぎ表示します。",
+      "reference": "https://www.php.net/manual/ja/function.implode.php",
+      "optionReasons": [
+        "指定した区切りはハイフンです。",
+        "区切り文字も挿入されます。",
+        "要素数を返す関数ではありません。",
+        "implodeは配列の値を指定文字でつなぎます。"
+      ],
+      "lines": [
+        "3つの文字列をハイフンでつなぎ表示します。"
+      ]
+    },
+    {
+      "id": "q61",
+      "topic": "builtin",
+      "learningPoint": "正規表現",
+      "title": "表示結果はどれですか？",
+      "code": "echo preg_match(\"/^[A-Z]+$/\", \"ABC\");",
+      "options": [
+        "0",
+        "1",
+        "ABC",
+        "エラー"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "英大文字が1文字以上、全体に一致するため1です。",
+      "easy": "^は先頭、$は末尾、+は1回以上の繰り返しです。",
+      "trace": "文字列全体が英大文字だけなので、一致を表す1を表示します。",
+      "reference": "https://www.php.net/manual/ja/function.preg-match.php",
+      "optionReasons": [
+        "ABCはパターンに一致します。",
+        "英大文字が1文字以上、全体に一致するため1です。",
+        "preg_matchの戻り値は一致した文字列ではありません。",
+        "有効なパターンです。"
+      ],
+      "lines": [
+        "文字列全体が英大文字だけなので、一致を表す1を表示します。"
+      ]
+    },
+    {
+      "id": "q62",
+      "topic": "builtin",
+      "learningPoint": "in_arrayの厳密モード",
+      "title": "表示結果はどれですか？",
+      "code": "var_dump(in_array(\"5\", [5], true));",
+      "options": [
+        "bool(true)",
+        "int(5)",
+        "bool(false)",
+        "エラー"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "文字列5と整数5は型が異なります。",
+      "easy": "値だけでなく型まで一致する要素があるかを調べます。",
+      "trace": "厳密一致する要素がないのでfalseを表示します。",
+      "reference": "https://www.php.net/manual/ja/function.in-array.php",
+      "optionReasons": [
+        "第3引数trueでは型も比較します。",
+        "戻り値は真偽値です。",
+        "文字列5と整数5は型が異なります。",
+        "厳密モードは有効な指定です。"
+      ],
+      "lines": [
+        "厳密一致する要素がないのでfalseを表示します。"
+      ]
+    },
+    {
+      "id": "q63",
+      "topic": "builtin",
+      "learningPoint": "JSONの連想配列化",
+      "title": "表示結果はどれですか？",
+      "code": "$a = json_decode('{\"n\":6}', true);\necho $a[\"n\"];",
+      "options": [
+        "6",
+        "n",
+        "null",
+        "エラー"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "第2引数trueで連想配列になり、キーnから6を取れます。",
+      "easy": "JSONのオブジェクトを、PHPでどんな形に変換するかに注目します。",
+      "trace": "JSONを連想配列に変換します。\nキーnの値6を表示します。",
+      "reference": "https://www.php.net/manual/ja/function.json-decode.php",
+      "optionReasons": [
+        "第2引数trueで連想配列になり、キーnから6を取れます。",
+        "nはキーです。",
+        "有効なJSONなので値が得られます。",
+        "連想配列として正しく参照しています。"
+      ],
+      "lines": [
+        "JSONを連想配列に変換します。",
+        "キーnの値6を表示します。"
+      ]
+    },
+    {
+      "id": "q64",
+      "topic": "functions",
+      "learningPoint": "参照渡し",
+      "title": "表示結果はどれですか？",
+      "code": "function step(&$n) {\n    $n++;\n}\n$value = 4;\nstep($value);\necho $value;",
+      "options": [
+        "4",
+        "1",
+        "エラー",
+        "5"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "&で呼び出し元の変数を変更します。",
+      "easy": "引数の前の&は、コピーではなく元の変数を扱う指定です。",
+      "trace": "参照渡しの引数を定義します。\n呼び出し元の値を1増やします。\n関数の定義を閉じます。\n元の値を4にします。\n参照渡しで5になります。\n変更後の5を表示します。",
+      "reference": "https://www.php.net/manual/ja/functions.arguments.php",
+      "optionReasons": [
+        "参照渡しなので元の値も変わります。",
+        "++は1を足す操作です。",
+        "変数を参照渡ししています。",
+        "&で呼び出し元の変数を変更します。"
+      ],
+      "lines": [
+        "参照渡しの引数を定義します。",
+        "呼び出し元の値を1増やします。",
+        "関数の定義を閉じます。",
+        "元の値を4にします。",
+        "参照渡しで5になります。",
+        "変更後の5を表示します。"
+      ]
+    },
+    {
+      "id": "q65",
+      "topic": "functions",
+      "learningPoint": "名前付き引数",
+      "title": "表示結果はどれですか？",
+      "code": "function pair($a = 1, $b = 2) {\n    return \"$a/$b\";\n}\necho pair(b: 8);",
+      "options": [
+        "1/8",
+        "8/2",
+        "8/1",
+        "エラー"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "bだけを指定し、aにはデフォルトの1が使われます。",
+      "easy": "名前を指定すれば、前の省略可能な引数を飛ばせます。",
+      "trace": "aとbにデフォルト値を定義します。\n2つの値を/でつなぎ返します。\n定義を閉じます。\nbだけ8を渡し、1/8を表示します。",
+      "reference": "https://www.php.net/manual/ja/functions.arguments.php",
+      "optionReasons": [
+        "bだけを指定し、aにはデフォルトの1が使われます。",
+        "名前bへ8を渡しています。",
+        "引数名と値の対応が逆です。",
+        "PHP8では名前付き引数を使用できます。"
+      ],
+      "lines": [
+        "aとbにデフォルト値を定義します。",
+        "2つの値を/でつなぎ返します。",
+        "定義を閉じます。",
+        "bだけ8を渡し、1/8を表示します。"
+      ]
+    },
+    {
+      "id": "q66",
+      "topic": "functions",
+      "learningPoint": "可変長引数",
+      "title": "表示結果はどれですか？",
+      "code": "function size(...$values) {\n    return count($values);\n}\necho size(4, 5);",
+      "options": [
+        "9",
+        "2",
+        "3",
+        "エラー"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "...$valuesは渡された2個の引数を配列にまとめます。",
+      "easy": "...で受け取った引数は配列として扱います。",
+      "trace": "個数が可変の引数を受け取ります。\n受け取った配列の個数を返します。\n定義を閉じます。\n2個渡すため2を表示します。",
+      "reference": "https://www.php.net/manual/ja/functions.arguments.php",
+      "optionReasons": [
+        "合計ではなく個数を返しています。",
+        "...$valuesは渡された2個の引数を配列にまとめます。",
+        "引数は3個ではありません。",
+        "可変長引数として有効です。"
+      ],
+      "lines": [
+        "個数が可変の引数を受け取ります。",
+        "受け取った配列の個数を返します。",
+        "定義を閉じます。",
+        "2個渡すため2を表示します。"
+      ]
+    },
+    {
+      "id": "q67",
+      "topic": "functions",
+      "learningPoint": "アロー関数のキャプチャ",
+      "title": "表示結果はどれですか？",
+      "code": "$offset = 2;\n$f = fn($x) => $x + $offset;\n$offset = 10;\necho $f(5);",
+      "options": [
+        "15",
+        "10",
+        "7",
+        "エラー"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "定義時の2を値で取り込み、5+2を返します。",
+      "easy": "アロー関数は定義時の外側の値を取り込みます。",
+      "trace": "外側の変数に2を保存します。\n2を値で取り込む関数を作ります。\n外側の変数だけ10に変えます。\n取り込んだ2を足して7を表示します。",
+      "reference": "https://www.php.net/manual/ja/functions.arrow.php",
+      "optionReasons": [
+        "定義後の10を参照し続けるわけではありません。",
+        "引数5も計算に使います。",
+        "定義時の2を値で取り込み、5+2を返します。",
+        "外側の変数は自動で取り込めます。"
+      ],
+      "lines": [
+        "外側の変数に2を保存します。",
+        "2を値で取り込む関数を作ります。",
+        "外側の変数だけ10に変えます。",
+        "取り込んだ2を足して7を表示します。"
+      ]
+    },
+    {
+      "id": "q68",
+      "topic": "functions",
+      "learningPoint": "変数のスコープ",
+      "title": "表示結果はどれですか？",
+      "code": "$n = 6;\nfunction change() {\n    $n = 99;\n}\nchange();\necho $n;",
+      "options": [
+        "6",
+        "99",
+        "105",
+        "エラー"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "関数内の$nは外側とは別の変数です。",
+      "easy": "関数の中と外では、同じ名前でも別の変数になるのが基本です。",
+      "trace": "外側の変数を6にします。\n関数を定義します。\n関数内だけの$nを99にします。\n定義を閉じます。\n関数を実行します。\n外側の6を表示します。",
+      "reference": "https://www.php.net/manual/ja/language.variables.scope.php",
+      "optionReasons": [
+        "関数内の$nは外側とは別の変数です。",
+        "外側を参照するglobalなどはありません。",
+        "加算処理はありません。",
+        "どちらの変数も有効に定義されています。"
+      ],
+      "lines": [
+        "外側の変数を6にします。",
+        "関数を定義します。",
+        "関数内だけの$nを99にします。",
+        "定義を閉じます。",
+        "関数を実行します。",
+        "外側の6を表示します。"
+      ]
+    },
+    {
+      "id": "q69",
+      "topic": "classes",
+      "learningPoint": "DateTimeの変更",
+      "title": "表示結果はどれですか？",
+      "code": "$d = new DateTime(\"2026-12-30\");\n$d->modify(\"+2 days\");\necho $d->format(\"Y-m-d\");",
+      "options": [
+        "2026-12-30",
+        "2027-01-01",
+        "2026-12-31",
+        "エラー"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "12月30日から2日後は翌年1月1日です。",
+      "easy": "DateTimeとDateTimeImmutableの違いを確認します。",
+      "trace": "12月30日の日付を作ります。\n元の$dを2日進めます。\n翌年1月1日を表示します。",
+      "reference": "https://www.php.net/manual/ja/datetime.modify.php",
+      "optionReasons": [
+        "DateTimeのmodifyは元のオブジェクトを変更します。",
+        "12月30日から2日後は翌年1月1日です。",
+        "加えるのは2日です。",
+        "有効な日付と相対指定です。"
+      ],
+      "lines": [
+        "12月30日の日付を作ります。",
+        "元の$dを2日進めます。",
+        "翌年1月1日を表示します。"
+      ]
+    },
+    {
+      "id": "q70",
+      "topic": "classes",
+      "learningPoint": "DateInterval",
+      "title": "DateInterval(\"P3D\")が表す期間はどれですか？",
+      "code": "",
+      "options": [
+        "3時間",
+        "3か月",
+        "3日",
+        "3年"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Pは期間、Dは日を表します。",
+      "easy": "日付部分と時間部分の記号を区別します。",
+      "trace": "日付部分と時間部分の記号を区別します。",
+      "reference": "https://www.php.net/manual/ja/dateinterval.construct.php",
+      "optionReasons": [
+        "時間ならPT3Hなどです。",
+        "月ならP3Mです。",
+        "Pは期間、Dは日を表します。",
+        "年ならP3Yです。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q71",
+      "topic": "classes",
+      "learningPoint": "日付書式",
+      "title": "時を24時間表記、分を2桁で表す書式はどれですか？",
+      "code": "",
+      "options": [
+        "H:i",
+        "H:m",
+        "Y:i",
+        "d:H"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "Hは24時間表記の時、iは分です。",
+      "easy": "分はminuteのmではなくi、月はmです。",
+      "trace": "分はminuteのmではなくi、月はmです。",
+      "reference": "https://www.php.net/manual/ja/datetime.format.php",
+      "optionReasons": [
+        "Hは24時間表記の時、iは分です。",
+        "mは月を表します。",
+        "Yは4桁の年です。",
+        "dは日を表します。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q72",
+      "topic": "classes",
+      "learningPoint": "ArrayObject",
+      "title": "表示結果はどれですか？",
+      "code": "$a = new ArrayObject([\"a\"]);\n$a->append(\"b\");\necho $a->count();",
+      "options": [
+        "1",
+        "3",
+        "a,b",
+        "2"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "初期要素と追加要素で2個です。",
+      "easy": "ArrayObjectは配列のような操作ができるオブジェクトです。",
+      "trace": "1要素で作成します。\n末尾へbを追加します。\n要素数2を表示します。",
+      "reference": "https://www.php.net/manual/ja/class.arrayobject.php",
+      "optionReasons": [
+        "要素は2個あります。",
+        "初期要素は1個で、追加は1個です。",
+        "countは値ではなく個数を返します。",
+        "初期要素と追加要素で2個です。"
+      ],
+      "lines": [
+        "1要素で作成します。",
+        "末尾へbを追加します。",
+        "要素数2を表示します。"
+      ]
+    },
+    {
+      "id": "q73",
+      "topic": "classes",
+      "learningPoint": "Exceptionの情報",
+      "title": "表示結果はどれですか？",
+      "code": "$e = new Exception(\"empty\", 404);\necho $e->getMessage();",
+      "options": [
+        "Exception",
+        "empty",
+        "404",
+        "エラー"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "getMessageは設定したメッセージを返します。",
+      "easy": "例外にはメッセージとコードなどの情報があります。",
+      "trace": "メッセージempty、コード404の例外を作ります。\nメッセージを取り出して表示します。",
+      "reference": "https://www.php.net/manual/ja/exception.getmessage.php",
+      "optionReasons": [
+        "クラス名を取得しているのではありません。",
+        "getMessageは設定したメッセージを返します。",
+        "getCodeとは異なります。",
+        "有効なメソッド呼び出しです。"
+      ],
+      "lines": [
+        "メッセージempty、コード404の例外を作ります。",
+        "メッセージを取り出して表示します。"
+      ]
+    },
+    {
+      "id": "q74",
+      "topic": "request",
+      "learningPoint": "GETの文字列",
+      "title": "URLのクエリが?page=4のとき、通常の$_GET[\"page\"]の型はどれですか？",
+      "code": "",
+      "options": [
+        "整数",
+        "真偽値",
+        "文字列",
+        "配列"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "通常の単一値は文字列として受け取ります。",
+      "easy": "入力の見た目が数字でも、型を確認してから使います。",
+      "trace": "入力の見た目が数字でも、型を確認してから使います。",
+      "reference": "https://www.php.net/manual/ja/language.variables.external.php",
+      "optionReasons": [
+        "通常のクエリの値は自動で整数になりません。",
+        "真偽値には自動変換されません。",
+        "通常の単一値は文字列として受け取ります。",
+        "page[]=4のような指定とは異なります。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q75",
+      "topic": "request",
+      "learningPoint": "Cookie",
+      "title": "Cookieについて正しいものをすべて選んでください。",
+      "code": "",
+      "options": [
+        "通常は出力前にsetcookieを呼ぶ",
+        "ブラウザから来たCookieは必ず信頼できる",
+        "setcookie直後に同じ要求の$_COOKIEへ自動反映される",
+        "次の要求で送られた値を$_COOKIEから読める"
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explanation": "CookieはHTTPヘッダーで送るため、通常は出力前に設定します。 ブラウザが次の要求で送った値を取得します。",
+      "easy": "設定する応答と、読み取る次の要求を分けて考えます。",
+      "trace": "設定する応答と、読み取る次の要求を分けて考えます。",
+      "reference": "https://www.php.net/manual/ja/function.setcookie.php",
+      "optionReasons": [
+        "CookieはHTTPヘッダーで送るため、通常は出力前に設定します。",
+        "利用者側から変更できるので検証が必要です。",
+        "現在の$_COOKIEを直接更新する関数ではありません。",
+        "ブラウザが次の要求で送った値を取得します。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q76",
+      "topic": "request",
+      "learningPoint": "セッション値の削除",
+      "title": "ログイン用のuser_idだけをセッションから取り除く操作はどれですか？",
+      "code": "",
+      "options": [
+        "session_start()",
+        "unset($_SESSION[\"user_id\"])",
+        "echo $_SESSION[\"user_id\"]",
+        "$_SESSION[\"user_id\"] == null"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "指定したキーの値だけを削除します。",
+      "easy": "セッション開始後の$_SESSIONは配列として操作できます。",
+      "trace": "セッション開始後の$_SESSIONは配列として操作できます。",
+      "reference": "https://www.php.net/manual/ja/session.examples.basic.php",
+      "optionReasons": [
+        "セッションを開始・再開します。",
+        "指定したキーの値だけを削除します。",
+        "表示するだけです。",
+        "比較であり削除ではありません。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q77",
+      "topic": "request",
+      "learningPoint": "HTTPヘッダー",
+      "title": "通常、リダイレクトを送った直後に後続処理を止めるには何を追加しますか？",
+      "code": "header(\"Location: /login\");",
+      "options": [
+        "return trueだけ",
+        "echoだけ",
+        "何も不要、headerが必ず停止する",
+        "exit;"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "exitで後続の実行を終了できます。",
+      "easy": "応答ヘッダーの設定と、PHPの実行終了は別の操作です。",
+      "trace": "Locationヘッダーを設定しますが、後続処理は続きます。",
+      "reference": "https://www.php.net/manual/ja/function.header.php",
+      "optionReasons": [
+        "トップレベルか関数内かで意味が異なり、確実な停止指定ではありません。",
+        "表示だけで後続処理は止まりません。",
+        "headerはスクリプトを終了しません。",
+        "exitで後続の実行を終了できます。"
+      ],
+      "lines": [
+        "Locationヘッダーを設定しますが、後続処理は続きます。"
+      ]
+    },
+    {
+      "id": "q78",
+      "topic": "request",
+      "learningPoint": "アップロード情報",
+      "title": "フォーム項目photoで送られたアップロードファイルの一時ファイル名はどこに入りますか？",
+      "code": "",
+      "options": [
+        "$_FILES[\"photo\"][\"tmp_name\"]",
+        "$_POST[\"photo\"]",
+        "$_FILES[\"photo\"][\"name\"]",
+        "$_GET[\"photo\"]"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "サーバー上の一時ファイル名です。",
+      "easy": "元の名前と、サーバーに保存された一時ファイル名を区別します。",
+      "trace": "元の名前と、サーバーに保存された一時ファイル名を区別します。",
+      "reference": "https://www.php.net/manual/ja/features.file-upload.post-method.php",
+      "optionReasons": [
+        "サーバー上の一時ファイル名です。",
+        "ファイル情報は通常$_FILESで扱います。",
+        "利用者側の元ファイル名です。",
+        "クエリ文字列の値とは異なります。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q79",
+      "topic": "request",
+      "learningPoint": "整数の検証",
+      "title": "表示結果はどれですか？",
+      "code": "$n = filter_var(\"0\", FILTER_VALIDATE_INT);\necho $n === false ? \"bad\" : \"ok\";",
+      "options": [
+        "bad",
+        "エラー",
+        "ok",
+        "空文字列"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "検証成功の整数0と失敗のfalseを区別しています。",
+      "easy": "0も有効な整数です。失敗判定は=== falseで行います。",
+      "trace": "文字列0を検証し、整数0を得ます。\nfalseではないのでokを表示します。",
+      "reference": "https://www.php.net/manual/ja/function.filter-var.php",
+      "optionReasons": [
+        "0をfalseと厳密比較すると等しくありません。",
+        "整数検証の有効な使い方です。",
+        "検証成功の整数0と失敗のfalseを区別しています。",
+        "条件に応じた文字列を表示します。"
+      ],
+      "lines": [
+        "文字列0を検証し、整数0を得ます。",
+        "falseではないのでokを表示します。"
+      ]
+    },
+    {
+      "id": "q80",
+      "topic": "request",
+      "learningPoint": "リクエストメソッド",
+      "title": "POST要求かを調べるため、通常参照する値はどれですか？",
+      "code": "",
+      "options": [
+        "$_GET[\"METHOD\"]",
+        "$_SERVER[\"REQUEST_METHOD\"]",
+        "$_COOKIE[\"POST\"]",
+        "$_SESSION[\"METHOD\"]"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "要求のメソッドがPOSTやGETとして入ります。",
+      "easy": "要求の種類など、環境情報は$_SERVERで確認します。",
+      "trace": "要求の種類など、環境情報は$_SERVERで確認します。",
+      "reference": "https://www.php.net/manual/ja/reserved.variables.server.php",
+      "optionReasons": [
+        "GETの任意の入力項目です。",
+        "要求のメソッドがPOSTやGETとして入ります。",
+        "Cookie名からは判定できません。",
+        "セッションに自動設定される項目ではありません。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q81",
+      "topic": "database",
+      "learningPoint": "プレースホルダーの範囲",
+      "title": "PDOの値プレースホルダーに渡すものとして適切なのはどれですか？",
+      "code": "",
+      "options": [
+        "テーブル名",
+        "ASCというキーワード",
+        "WHERE句全体",
+        "検索するuser_idの値"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "条件で比較する一つのデータ値を渡せます。",
+      "easy": "?や:nameは命令を差し替える場所ではなく、データ値を渡す場所です。",
+      "trace": "?や:nameは命令を差し替える場所ではなく、データ値を渡す場所です。",
+      "reference": "https://www.php.net/manual/ja/pdo.prepared-statements.php",
+      "optionReasons": [
+        "テーブル名などの識別子には使えません。",
+        "SQLのキーワードは値ではありません。",
+        "SQL構文の断片は渡せません。",
+        "条件で比較する一つのデータ値を渡せます。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q82",
+      "topic": "database",
+      "learningPoint": "トランザクション",
+      "title": "対応するDBで、開始済みの未確定トランザクションの変更を取り消すメソッドはどれですか？",
+      "code": "",
+      "options": [
+        "rollBack()",
+        "commit()",
+        "fetchAll()",
+        "prepare()"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "未確定の変更を取り消して終了します。",
+      "easy": "一連の変更を、確定するか取り消すか選びます。",
+      "trace": "一連の変更を、確定するか取り消すか選びます。",
+      "reference": "https://www.php.net/manual/ja/pdo.rollback.php",
+      "optionReasons": [
+        "未確定の変更を取り消して終了します。",
+        "変更を確定する操作です。",
+        "結果を取得する操作です。",
+        "SQL文を準備する操作です。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q83",
+      "topic": "database",
+      "learningPoint": "bindParam",
+      "title": "bindParamについて正しいものをすべて選んでください。",
+      "code": "",
+      "options": [
+        "SQL文を画面に表示する",
+        "変数を参照で結び付ける",
+        "execute時の変数の値が使われる",
+        "テーブル名を安全に差し替えられる"
+      ],
+      "answer": [
+        1,
+        2
+      ],
+      "explanation": "変数そのものをパラメータへ結び付けます。 実行前に変数を変えると、実行時の値が使われます。",
+      "easy": "bindValueは値、bindParamは変数を結び付ける、と区別します。",
+      "trace": "bindValueは値、bindParamは変数を結び付ける、と区別します。",
+      "reference": "https://www.php.net/manual/ja/pdostatement.bindparam.php",
+      "optionReasons": [
+        "表示するためのメソッドではありません。",
+        "変数そのものをパラメータへ結び付けます。",
+        "実行前に変数を変えると、実行時の値が使われます。",
+        "識別子用の仕組みではありません。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q84",
+      "topic": "oop",
+      "learningPoint": "protected",
+      "title": "protectedプロパティについて正しい説明はどれですか？",
+      "code": "",
+      "options": [
+        "どこからでも直接読める",
+        "定義したクラスと継承関係のクラスから扱える",
+        "定義したクラスでしか扱えない",
+        "読み取り専用になる"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "protectedは継承関係のクラスにもアクセスを認めます。",
+      "easy": "public・protected・privateは、使える場所の範囲を指定します。",
+      "trace": "public・protected・privateは、使える場所の範囲を指定します。",
+      "reference": "https://www.php.net/manual/ja/language.oop5.visibility.php",
+      "optionReasons": [
+        "外部からの直接アクセスは制限されます。",
+        "protectedは継承関係のクラスにもアクセスを認めます。",
+        "それはprivateの説明です。",
+        "protectedは読み取り専用という意味ではありません。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q85",
+      "topic": "oop",
+      "learningPoint": "メソッドの上書き",
+      "title": "表示結果はどれですか？",
+      "code": "class BaseLabel { public function text() { return \"base\"; } }\nclass ChildLabel extends BaseLabel { public function text() { return \"child\"; } }\necho (new ChildLabel())->text();",
+      "options": [
+        "base",
+        "basechild",
+        "child",
+        "エラー"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "実際のインスタンスのChildLabelのメソッドが呼ばれます。",
+      "easy": "子クラスで同じメソッドを定義すると、その実装が使われます。",
+      "trace": "親クラスでbaseを返すメソッドを定義します。\n子クラスでchildを返すように上書きします。\n子のインスタンスから呼び、childを表示します。",
+      "reference": "https://www.php.net/manual/ja/language.oop5.inheritance.php",
+      "optionReasons": [
+        "子クラスでメソッドを上書きしています。",
+        "親のメソッドは自動で併せて実行されません。",
+        "実際のインスタンスのChildLabelのメソッドが呼ばれます。",
+        "互換性のある上書きです。"
+      ],
+      "lines": [
+        "親クラスでbaseを返すメソッドを定義します。",
+        "子クラスでchildを返すように上書きします。",
+        "子のインスタンスから呼び、childを表示します。"
+      ]
+    },
+    {
+      "id": "q86",
+      "topic": "oop",
+      "learningPoint": "親メソッドの呼び出し",
+      "title": "子クラスのメソッド内で、親クラスのpublicメソッドrunを明示的に呼ぶ記法はどれですか？",
+      "code": "",
+      "options": [
+        "parent::run()",
+        "parent->run()",
+        "super.run()",
+        "extends run()"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "parent::で親クラスの実装を指定します。",
+      "easy": "上書きした処理の中から、親の処理を再利用できます。",
+      "trace": "上書きした処理の中から、親の処理を再利用できます。",
+      "reference": "https://www.php.net/manual/ja/language.oop5.paamayim-nekudotayim.php",
+      "optionReasons": [
+        "parent::で親クラスの実装を指定します。",
+        "parentはこのようなオブジェクト変数ではありません。",
+        "PHPの親呼び出し記法ではありません。",
+        "extendsは継承の宣言に使います。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q87",
+      "topic": "oop",
+      "learningPoint": "クラス定数",
+      "title": "表示結果はどれですか？",
+      "code": "class Course { public const CODE = \"P8\"; }\necho Course::CODE;",
+      "options": [
+        "CODE",
+        "$CODE",
+        "エラー",
+        "P8"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "クラス名::定数名で値P8を取得します。",
+      "easy": "インスタンスを作らずにクラスの定数を読めます。",
+      "trace": "公開クラス定数CODEを定義します。\n値P8を表示します。",
+      "reference": "https://www.php.net/manual/ja/language.oop5.constants.php",
+      "optionReasons": [
+        "定数名ではなく値を表示します。",
+        "クラス定数に$は付けません。",
+        "公開クラス定数への有効なアクセスです。",
+        "クラス名::定数名で値P8を取得します。"
+      ],
+      "lines": [
+        "公開クラス定数CODEを定義します。",
+        "値P8を表示します。"
+      ]
+    },
+    {
+      "id": "q88",
+      "topic": "oop",
+      "learningPoint": "staticプロパティ",
+      "title": "表示結果はどれですか？",
+      "code": "class Counter { public static $n = 0; }\nCounter::$n += 3;\necho Counter::$n;",
+      "options": [
+        "0",
+        "3",
+        "1",
+        "エラー"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "staticプロパティを::で読み書きしています。",
+      "easy": "staticの値は個々のインスタンスではなくクラス側で扱います。",
+      "trace": "クラス側の値を0で定義します。\nその値に3を足します。\n3を表示します。",
+      "reference": "https://www.php.net/manual/ja/language.oop5.static.php",
+      "optionReasons": [
+        "加算しているので0ではありません。",
+        "staticプロパティを::で読み書きしています。",
+        "足す値は3です。",
+        "publicなstaticプロパティへの正しいアクセスです。"
+      ],
+      "lines": [
+        "クラス側の値を0で定義します。",
+        "その値に3を足します。",
+        "3を表示します。"
+      ]
+    },
+    {
+      "id": "q89",
+      "topic": "oop",
+      "learningPoint": "staticメソッド",
+      "title": "staticメソッドについて正しいものをすべて選んでください。",
+      "code": "",
+      "options": [
+        "必ずnewしてから呼ぶ",
+        "内部で常に$thisが使える",
+        "クラス名::メソッド名で呼べる",
+        "そのメソッドには$thisがない"
+      ],
+      "answer": [
+        2,
+        3
+      ],
+      "explanation": "公開staticメソッドはこの記法で呼べます。 staticメソッドには現在のインスタンスを示す$thisがありません。",
+      "easy": "$thisは「今のインスタンス」。staticにはその前提がありません。",
+      "trace": "$thisは「今のインスタンス」。staticにはその前提がありません。",
+      "reference": "https://www.php.net/manual/ja/language.oop5.static.php",
+      "optionReasons": [
+        "インスタンスなしで呼べます。",
+        "インスタンスを前提としないため$thisは使えません。",
+        "公開staticメソッドはこの記法で呼べます。",
+        "staticメソッドには現在のインスタンスを示す$thisがありません。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q90",
+      "topic": "oop",
+      "learningPoint": "抽象クラス",
+      "title": "抽象クラスについて正しいものをすべて選んでください。",
+      "code": "",
+      "options": [
+        "直接newできない",
+        "必ずすべてのメソッドが抽象でなければならない",
+        "実装済みのメソッドも持てる",
+        "abstractを付けると継承できない"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "抽象クラス自体は直接インスタンス化できません。 共通の処理を実装しておけます。",
+      "easy": "未完成の部分を子クラスで実装し、共通部分を親に置けます。",
+      "trace": "未完成の部分を子クラスで実装し、共通部分を親に置けます。",
+      "reference": "https://www.php.net/manual/ja/language.oop5.abstract.php",
+      "optionReasons": [
+        "抽象クラス自体は直接インスタンス化できません。",
+        "実装を持つ通常のメソッドも定義できます。",
+        "共通の処理を実装しておけます。",
+        "継承して具体的なクラスを作るために使います。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q91",
+      "topic": "oop",
+      "learningPoint": "インターフェイス",
+      "title": "PHP8.0のインターフェイスについて正しいものをすべて選んでください。",
+      "code": "",
+      "options": [
+        "クラスは一つしか実装できない",
+        "宣言したメソッドはpublic",
+        "implementsで実装を宣言する",
+        "newで直接インスタンス化できる"
+      ],
+      "answer": [
+        1,
+        2
+      ],
+      "explanation": "インターフェイスのメソッドはpublicです。 クラスでimplementsを使います。",
+      "easy": "利用側に対して「この操作を提供する」という約束を表します。",
+      "trace": "利用側に対して「この操作を提供する」という約束を表します。",
+      "reference": "https://www.php.net/manual/ja/language.oop5.interfaces.php",
+      "optionReasons": [
+        "クラスは複数のインターフェイスを実装できます。",
+        "インターフェイスのメソッドはpublicです。",
+        "クラスでimplementsを使います。",
+        "インターフェイス自体はインスタンス化できません。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q92",
+      "topic": "oop",
+      "learningPoint": "トレイト",
+      "title": "トレイトについて正しい説明はどれですか？",
+      "code": "",
+      "options": [
+        "必ずnewで作る",
+        "クラスの親を二つにする仕組み",
+        "クラス内のuseで処理を取り込める",
+        "読み込むと全メソッドがstaticになる"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "クラス内のuseでメソッドなどを再利用します。",
+      "easy": "継承とは別に、共通処理を複数のクラスで再利用します。",
+      "trace": "継承とは別に、共通処理を複数のクラスで再利用します。",
+      "reference": "https://www.php.net/manual/ja/language.oop5.traits.php",
+      "optionReasons": [
+        "トレイト自体はインスタンス化しません。",
+        "複数の親クラスを継承する仕組みではありません。",
+        "クラス内のuseでメソッドなどを再利用します。",
+        "staticかどうかは定義によります。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q93",
+      "topic": "oop",
+      "learningPoint": "final",
+      "title": "finalについて正しいものをすべて選んでください。",
+      "code": "",
+      "options": [
+        "finalクラスは継承できない",
+        "finalクラスはnewできない",
+        "finalメソッドは呼び出せない",
+        "finalメソッドは子クラスで上書きできない"
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explanation": "finalクラスの子クラスは作れません。 親のfinalメソッドを上書きすることはできません。",
+      "easy": "finalは、継承による変更を止める指定です。",
+      "trace": "finalは、継承による変更を止める指定です。",
+      "reference": "https://www.php.net/manual/ja/language.oop5.final.php",
+      "optionReasons": [
+        "finalクラスの子クラスは作れません。",
+        "インスタンス化の禁止ではありません。",
+        "アクセス権を満たせば呼び出せます。",
+        "親のfinalメソッドを上書きすることはできません。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q94",
+      "topic": "oop",
+      "learningPoint": "オブジェクトの代入",
+      "title": "表示結果はどれですか？",
+      "code": "class Card { public $color = \"red\"; }\n$a = new Card();\n$b = $a;\n$b->color = \"blue\";\necho $a->color;",
+      "options": [
+        "red",
+        "blue",
+        "redblue",
+        "エラー"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "$b経由の変更は同じオブジェクトへ反映されます。",
+      "easy": "通常の代入だけでは、独立したオブジェクトのコピーは作られません。",
+      "trace": "色のプロパティを持つクラスです。\nインスタンスを作ります。\n同じオブジェクトを$bからも参照します。\nその色をblueに変えます。\n同じオブジェクトのblueを表示します。",
+      "reference": "https://www.php.net/manual/ja/language.oop5.references.php",
+      "optionReasons": [
+        "$aと$bは同じオブジェクトを指します。",
+        "$b経由の変更は同じオブジェクトへ反映されます。",
+        "値を連結していません。",
+        "公開プロパティへの有効な操作です。"
+      ],
+      "lines": [
+        "色のプロパティを持つクラスです。",
+        "インスタンスを作ります。",
+        "同じオブジェクトを$bからも参照します。",
+        "その色をblueに変えます。",
+        "同じオブジェクトのblueを表示します。"
+      ]
+    },
+    {
+      "id": "q95",
+      "topic": "oop",
+      "learningPoint": "clone",
+      "title": "表示結果はどれですか？",
+      "code": "class Box { public $n = 5; }\n$a = new Box();\n$b = clone $a;\n$b->n = 9;\necho $a->n . \"/\" . $b->n;",
+      "options": [
+        "5/5",
+        "9/9",
+        "5/9",
+        "エラー"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "cloneで別オブジェクトを作り、コピー側だけ変更しています。",
+      "easy": "cloneは浅いコピーです。この例の整数プロパティは独立して変えられます。",
+      "trace": "整数プロパティを定義します。\n元のインスタンスを作ります。\n別のインスタンスへ複製します。\nコピー側の整数を変えます。\n元は5、コピーは9です。",
+      "reference": "https://www.php.net/manual/ja/language.oop5.cloning.php",
+      "optionReasons": [
+        "コピー側の値を9に変えています。",
+        "元のインスタンスの整数プロパティは変わりません。",
+        "cloneで別オブジェクトを作り、コピー側だけ変更しています。",
+        "有効なclone操作です。"
+      ],
+      "lines": [
+        "整数プロパティを定義します。",
+        "元のインスタンスを作ります。",
+        "別のインスタンスへ複製します。",
+        "コピー側の整数を変えます。",
+        "元は5、コピーは9です。"
+      ]
+    },
+    {
+      "id": "q96",
+      "topic": "oop",
+      "learningPoint": "instanceof",
+      "title": "表示結果はどれですか？",
+      "code": "class Animal {}\nclass Cat extends Animal {}\nvar_dump((new Cat()) instanceof Animal);",
+      "options": [
+        "bool(true)",
+        "bool(false)",
+        "Animal",
+        "エラー"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "子クラスのインスタンスは親クラスにも属します。",
+      "easy": "instanceofは直接のクラスだけでなく継承関係も確認します。",
+      "trace": "親クラスを定義します。\nCatがAnimalを継承します。\nAnimalにも属するためtrueを表示します。",
+      "reference": "https://www.php.net/manual/ja/language.operators.type.php",
+      "optionReasons": [
+        "子クラスのインスタンスは親クラスにも属します。",
+        "継承関係があるためfalseではありません。",
+        "結果はクラス名ではなく真偽値です。",
+        "有効な型の確認です。"
+      ],
+      "lines": [
+        "親クラスを定義します。",
+        "CatがAnimalを継承します。",
+        "Animalにも属するためtrueを表示します。"
+      ]
+    },
+    {
+      "id": "q97",
+      "topic": "advanced",
+      "learningPoint": "finally",
+      "title": "表示結果はどれですか？",
+      "code": "try {\n    throw new Exception(\"stop\");\n    echo \"T\";\n} catch (Exception $e) {\n    echo \"C\";\n} finally {\n    echo \"F\";\n}",
+      "options": [
+        "C",
+        "F",
+        "TF",
+        "CF"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "例外をcatchで受け、最後にfinallyを実行します。",
+      "easy": "finallyは終了時の片付けなどに使います。",
+      "trace": "例外に備える処理です。\n例外を投げてcatchへ移ります。\nこの行は実行しません。\n例外を受け取ります。\nCを表示します。\nfinallyへ進みます。\nFを表示します。\n終了します。",
+      "reference": "https://www.php.net/manual/ja/language.exceptions.php",
+      "optionReasons": [
+        "catchの後にfinallyも実行します。",
+        "catch内のCも表示します。",
+        "例外を投げたのでTは表示しません。",
+        "例外をcatchで受け、最後にfinallyを実行します。"
+      ],
+      "lines": [
+        "例外に備える処理です。",
+        "例外を投げてcatchへ移ります。",
+        "この行は実行しません。",
+        "例外を受け取ります。",
+        "Cを表示します。",
+        "finallyへ進みます。",
+        "Fを表示します。",
+        "終了します。"
+      ]
+    },
+    {
+      "id": "q98",
+      "topic": "advanced",
+      "learningPoint": "require_once",
+      "title": "同じ設定ファイルを複数箇所から読み込む際、重複読み込みを避け、読み込み失敗をErrorにする構文はどれですか？",
+      "code": "",
+      "options": [
+        "include",
+        "require_once",
+        "echo",
+        "use"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "一度だけ読み込み、失敗はPHP8ではErrorです。",
+      "easy": "_onceは一度だけ、requireは必要なファイルの読み込みです。",
+      "trace": "_onceは一度だけ、requireは必要なファイルの読み込みです。",
+      "reference": "https://www.php.net/manual/ja/function.require-once.php",
+      "optionReasons": [
+        "重複防止はせず、読み込み失敗は通常警告です。",
+        "一度だけ読み込み、失敗はPHP8ではErrorです。",
+        "表示するための構文です。",
+        "名前空間のインポート自体はファイルの読み込みではありません。"
+      ],
+      "lines": []
+    },
+    {
+      "id": "q99",
+      "topic": "advanced",
+      "learningPoint": "名前空間の別名",
+      "title": "このuse宣言が行うことはどれですか？",
+      "code": "use App\\Log as Logger;",
+      "options": [
+        "ファイルを必ず読み込む",
+        "Loggerのインスタンスを作る",
+        "LoggerをApp\\Logというクラス名の別名にする",
+        "App\\Logを削除する"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "以降、Loggerという短い名前で参照できます。",
+      "easy": "useは名前を短く書くための対応付けです。",
+      "trace": "App\\LogをLoggerという別名で使う宣言です。",
+      "reference": "https://www.php.net/manual/ja/language.namespaces.importing.php",
+      "optionReasons": [
+        "use宣言そのものはファイルを読み込みません。",
+        "newの処理ではありません。",
+        "以降、Loggerという短い名前で参照できます。",
+        "元のクラスを削除することはありません。"
+      ],
+      "lines": [
+        "App\\LogをLoggerという別名で使う宣言です。"
+      ]
+    },
+    {
+      "id": "q100",
+      "topic": "advanced",
+      "learningPoint": "ファイルへの追記",
+      "title": "既存ファイルを開き、末尾へ追記するためのfopenモードはどれですか？",
+      "code": "",
+      "options": [
+        "a",
+        "w",
+        "r",
+        "x"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "aは末尾へ書き込みます。ファイルがなければ作成を試みます。",
+      "easy": "書き込むときは、既存の内容が残るかを確認します。",
+      "trace": "書き込むときは、既存の内容が残るかを確認します。",
+      "reference": "https://www.php.net/manual/ja/function.fopen.php",
+      "optionReasons": [
+        "aは末尾へ書き込みます。ファイルがなければ作成を試みます。",
+        "wは既存の内容を切り詰めます。",
+        "rは読み取り用です。",
+        "xは新規作成専用で、既存なら失敗します。"
+      ],
+      "lines": []
     }
   ],
   "topics": [
@@ -953,5 +3072,16 @@
       "example": "try {\n    throw new Exception(\"確認してください\");\n} catch (Exception $e) {\n    echo \"対応します\";\n}",
       "exampleExplanation": "1行目：例外に備える範囲を始めます。\n2行目：例外を投げます。\n3行目：対応するcatchで受け取ります。\n4行目：対応のメッセージを表示します。\n5行目：catchを閉じます。"
     }
-  ]
+  ],
+  "metadata": {
+    "edition": "PHP8初級・独自対策問題100問",
+    "updated": "2026-10-25",
+    "scope": "PHP8.0で利用できる基本構文を中心に作成。8.1以降だけの新機能は問わない。",
+    "sources": [
+      "https://www.phpexam.jp/summary/novice8",
+      "https://mogishiken.jp/questions",
+      "https://www.php.net/manual/ja/"
+    ],
+    "note": "公式範囲と参考サイトの形式を参考にした独自問題。転載・公式過去問ではない。問題数は各章の出題率を参考に丸めて配分しており、本試験の正確な配点や難易度を保証しない。"
+  }
 }

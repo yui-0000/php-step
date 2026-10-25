@@ -187,5 +187,5 @@ def create_app(config=None):
 
 if __name__ == '__main__':
     from waitress import serve
-    print('PHP STEP: http://127.0.0.1:5000', flush=True)
-    serve(create_app(), host='127.0.0.1', port=5000)
+    print('PHP STEP: http://127.0.0.1:8000', flush=True)
+    serve(create_app(), host='127.0.0.1', port=8000)

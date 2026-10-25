@@ -1,4 +1,4 @@
-const CACHE = 'php-step-shell-v3';
+const CACHE = 'php-step-shell-v4';
 const SHELL = ['/', '/static/style.css', '/static/app.js', '/static/core.js', '/static/questions.js', '/static/sync.js', '/api/questions', '/manifest.webmanifest', '/static/icon.svg', '/static/icon-192.png', '/static/icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)));

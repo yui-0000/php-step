@@ -76,6 +76,19 @@ test('backup roundtrip preserves progress and rejects invalid or foreign IDs',()
  assert.throws(()=>validateState(foreign));
 });
 test('question bank has unique stable IDs, answers, explanations, and HTTPS references',()=>{
- assert.equal(questions.length,30);assert.equal(new Set(questions.map(q=>q.id)).size,30);
+ assert.equal(questions.length,100);assert.equal(new Set(questions.map(q=>q.id)).size,100);
  for(const q of questions){assert.ok(content.topics.some(t=>t.id===q.topic));assert.ok(q.answer.every(i=>Number.isInteger(i)&&i>=0&&i<q.options.length));assert.ok(q.easy&&q.trace&&q.explanation);assert.match(q.reference,/^https:\/\/www\.php\.net\/manual\/ja\//);}
+});
+test('100-question edition covers every planned topic and preserves new question progress',()=>{
+ const distribution={intro:3,basics:12,operators:10,control:14,builtin:9,functions:8,classes:7,request:10,database:5,oop:17,advanced:5};
+ for(const [topic,count] of Object.entries(distribution))assert.equal(questions.filter(q=>q.topic===topic).length,count,topic);
+ assert.ok(questions.filter(q=>q.answer.length>1).length>=10);
+ assert.equal(new Set(questions.map(q=>q.title+'\n'+q.code)).size,100);
+ for(const q of questions){assert.equal(new Set(q.answer).size,q.answer.length);assert.ok(q.answer.length>0&&q.answer.length<q.options.length);assert.equal(new Set(q.options).size,q.options.length);}
+ const s=initialState(),q=questions.find(q=>q.id==='q100');
+ recordAnswer(s,q.id,q.answer,'unsure');
+ saveQuestionNote(s,q.id,'追記を復習する',{selected:q.answer,confidence:'unsure'});
+ const restored=validateState(JSON.parse(JSON.stringify(s)));
+ assert.deepEqual(selectQuestions(restored,{mode:'review'}),['q100']);
+ assert.match(questionsText(restored.questionNotes),/追記を復習する/);
 });
