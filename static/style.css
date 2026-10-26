@@ -4,3 +4,5 @@
 [hidden]{display:none!important}.preserve-lines{white-space:pre-wrap}.line-explanation{padding:12px 0;border-bottom:1px solid #dce5df}.line-explanation code{white-space:pre-wrap;overflow-wrap:anywhere}.line-explanation p{margin:8px 0}.lesson summary{font-weight:700;cursor:pointer}.lesson{margin-top:24px}.copy-fallback{width:100%;min-height:240px}.help summary{line-height:1.8}.bottom a{min-width:0}@media(max-width:650px){.bottom a{font-size:12px;padding:12px 3px}.bottom a span{font-size:11px}}
 
 .confidence-card{margin-top:24px}.confidence-card .confidence{margin-top:0}.confidence-card legend{font-size:16px;font-weight:700}.confidence-card label{min-height:44px}
+
+.answer-key{font-size:22px;background:white;border:2px solid var(--green);border-radius:12px;padding:16px;overflow-wrap:anywhere}.answer-difference{font-weight:700}.answer-reason{border-top:1px solid var(--line);padding:12px 0}.answer-reason p{margin-bottom:0}

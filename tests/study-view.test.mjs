@@ -30,3 +30,20 @@ test('10-question check still conceals correctness and explanation until complet
  const confirmed=render({mode:'quiz',ids:['q01'],index:0,responses:{q01:{selected:[1],correct:false,confidence:'sure'}}});
  assert.doesNotMatch(confirmed,/復習対象として記録|id="answer-feedback"/);
 });
+
+test('q04 explains extra and missing choices before asking for understanding',()=>{
+ const session={mode:'learn',ids:['q04'],index:0,responses:{},pending:{id:'q04',selected:[1,2,3]}};
+ const html=render(session);
+ assert.match(html,/正解：\$b \/ \$d/);
+ assert.match(html,/あなたの回答：\$b \/ \$c \/ \$d/);
+ assert.match(html,/選びすぎた選択肢：\$c/);
+ assert.match(html,/trueは真偽値です/);
+ assert.match(html,/理解できた/);
+ assert.match(html,/理解度を記録する/);
+ assert.doesNotMatch(html,/選び忘れた選択肢|>自信あり</);
+ assert.ok(html.indexOf('trueは真偽値です')<html.indexOf('id="confidence-form"'));
+ session.pending.selected=[1];
+ const missing=render(session);
+ assert.match(missing,/選び忘れた選択肢：\$d/);
+ assert.doesNotMatch(missing,/選びすぎた選択肢/);
+});

@@ -39,3 +39,19 @@ test('authenticated online responses refresh cached content', async () => {
   assert.equal(await (await w.request('/api/questions')).text(), 'updated-study');
   assert.equal(w.puts[0][1], 'updated-study');
 });
+
+test('new worker activates only after all shell assets are cached', async () => {
+  const events={}, calls=[];
+  let finish;
+  const ready=new Promise(resolve=>{finish=resolve;});
+  vm.runInNewContext(readFileSync(new URL('../static/sw.js', import.meta.url), 'utf8'), {
+    self:{addEventListener:(name,handler)=>{events[name]=handler;},skipWaiting:()=>{calls.push('activate');}},
+    caches:{open:async()=>({addAll:async()=>{calls.push('cache');await ready;}})},
+  });
+  let installed;
+  events.install({waitUntil:promise=>{installed=promise;}});
+  await new Promise(resolve=>setImmediate(resolve));
+  assert.deepEqual(calls,['cache']);
+  finish();await installed;
+  assert.deepEqual(calls,['cache','activate']);
+});
