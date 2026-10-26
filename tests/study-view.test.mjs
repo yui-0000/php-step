@@ -37,6 +37,9 @@ test('q04 explains extra and missing choices before asking for understanding',()
  assert.match(html,/正解：\$b \/ \$d/);
  assert.match(html,/あなたの回答：\$b \/ \$c \/ \$d/);
  assert.match(html,/選びすぎた選択肢：\$c/);
+ assert.match(html,/verdict-incorrect/);
+ assert.match(html,/id="verdict-heading">不正解です/);
+ assert.match(html,/× あなたの誤答/);
  assert.match(html,/trueは真偽値です/);
  assert.match(html,/理解できた/);
  assert.match(html,/理解度を記録する/);
@@ -46,4 +49,9 @@ test('q04 explains extra and missing choices before asking for understanding',()
  const missing=render(session);
  assert.match(missing,/選び忘れた選択肢：\$d/);
  assert.doesNotMatch(missing,/選びすぎた選択肢/);
+ session.pending.selected=[1,3];
+ const correct=render(session);
+ assert.match(correct,/verdict-correct/);
+ assert.match(correct,/id="verdict-heading">正解です！/);
+ assert.doesNotMatch(correct,/× あなたの誤答|verdict-incorrect/);
 });

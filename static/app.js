@@ -43,7 +43,7 @@ function study(){
  <h1 class="question-title">${escape(q.title)}</h1>
  ${q.code?`<pre><code>${escape(q.code)}</code></pre>`:''}
  <p class="muted">${multiple?'正しいものをすべて選んでください。':'正しいものを1つ選んでください。'}</p>
- <form id="answer-form"><div class="options">${q.options.map((text,i)=>`<label class="option ${reveal&&q.answer.includes(i)?'correct':reveal&&r.selected.includes(i)?'wrong':''}"><input type="${multiple?'checkbox':'radio'}" name="answer" value="${i}" ${r?.selected.includes(i)?'checked':''} ${r?'disabled':''}><span>${escape(text)}</span></label>`).join('')}</div>
+ <form id="answer-form"><div class="options">${q.options.map((text,i)=>`<label class="option ${reveal&&q.answer.includes(i)?'correct':reveal&&r.selected.includes(i)?'wrong':''}"><input type="${multiple?'checkbox':'radio'}" name="answer" value="${i}" ${r?.selected.includes(i)?'checked':''} ${r?'disabled':''}><span class="option-content"><span>${escape(text)}</span>${reveal?(q.answer.includes(i)?`<span class="option-verdict right">○ 正解${r.selected.includes(i)?'・選択済み':'・選び忘れ'}</span>`:r.selected.includes(i)?'<span class="option-verdict incorrect">× あなたの誤答</span>':''):''}</span></label>`).join('')}</div>
  ${!r?'<p class="notice">まず答えを選びましょう。回答後に正解と解説を読み、理解度を記録できます。</p><button class="btn full" type="submit">回答する →</button>':''}</form>
  ${r?`${reveal?`${answerFeedback(q,r)}${lesson(q)}${answerDetails(q)}`:'<p class="feedback" role="status">回答を受け付けました。10問チェックの解説は終了後に確認できます。</p>'}
  ${pending?`<form id="confidence-form" class="card confidence-card"><fieldset class="confidence"><legend>${reveal?'解説を読んで、理解できましたか？':'この回答への自信は？'}</legend>${(reveal?[['sure','理解できた'],['unsure','まだ迷う'],['unknown','よくわからない']]:[['sure','自信あり'],['unsure','まだ迷う'],['unknown','わからない']]).map(([v,t])=>`<label><input type="radio" name="confidence" value="${v}" required>${t}</label>`).join('')}</fieldset><p class="notice">${reveal?'正解の理由を説明できれば「理解できた」を選びましょう。不正解だった問題は、理解できても復習に残ります。':'回答への自信を記録します。解説はチェック終了後に確認できます。'}</p><button class="btn full" type="submit">${reveal?'理解度を記録する':'自信を記録する'}</button></form>`:`<p class="feedback">${reveal?'解説を読んだ後の理解度':'回答への自信'}：${(reveal?{sure:'理解できた',unsure:'まだ迷う',unknown:'よくわからない'}:{sure:'自信あり',unsure:'まだ迷う',unknown:'わからない'})[confirmed.confidence]}。${s.mode==='quiz'?'回答と自信を記録しました。解説は終了後に確認できます。':!confirmed.correct||confirmed.confidence!=='sure'?'復習対象として記録しました。':'学習履歴に記録しました。'}</p><div class="actions">${next}</div>`}
@@ -53,8 +53,8 @@ function study(){
 function answerFeedback(q,r){
  const missed=q.answer.filter(i=>!r.selected.includes(i)),extra=r.selected.filter(i=>!q.answer.includes(i));
  const names=ids=>escape(ids.map(i=>q.options[i]).join(' / '));
- return `<section id="answer-feedback" tabindex="-1" class="feedback ${r.correct?'':'wrong'}" role="status">
- <h2>${r.correct?'✓ 正解です':'今回は不正解です'}</h2>
+ return `<section id="answer-feedback" tabindex="-1" class="feedback verdict-panel ${r.correct?'verdict-correct':'wrong verdict-incorrect'}" role="status" aria-labelledby="verdict-heading">
+ <div class="verdict-banner"><span class="verdict-symbol" aria-hidden="true">${r.correct?'○':'×'}</span><div><h2 id="verdict-heading">${r.correct?'正解です！':'不正解です'}</h2><p>${r.correct?'選んだ答えはすべて合っています。':'正解とあなたの回答を見比べましょう。'}</p></div></div>
  <p class="answer-key"><strong>正解：${names(q.answer)}</strong></p>
  <p>あなたの回答：${names(r.selected)}</p>
  ${extra.length?`<p class="answer-difference">選びすぎた選択肢：${names(extra)}</p>`:''}
@@ -86,7 +86,7 @@ document.addEventListener('submit',e=>{
  if(e.target.id==='answer-form'){
   e.preventDefault();const s=state.session;if(!s)return;
   const selected=new FormData(e.target).getAll('answer').map(Number);
-  try{stageAnswer(state,selected);save();render();$('#answer-feedback')?.focus();}catch(err){toast(err.message);}
+  try{stageAnswer(state,selected);save();render();const feedback=$('#answer-feedback');feedback?.focus({preventScroll:true});feedback?.scrollIntoView({block:'start'});}catch(err){toast(err.message);}
  }
  if(e.target.id==='confidence-form'){
   e.preventDefault();const confidence=new FormData(e.target).get('confidence');
