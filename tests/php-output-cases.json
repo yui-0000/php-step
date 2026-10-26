@@ -1,0 +1,667 @@
+[
+  {
+    "id": "q103",
+    "code": "$a = [2, 4];\n$b = $a;\n$b[0] = 9;\necho $a[0] . ':' . $b[0];",
+    "expected": "2:9"
+  },
+  {
+    "id": "q104",
+    "code": "$a = 5;\n$b =& $a;\nunset($b);\necho $a;",
+    "expected": "5"
+  },
+  {
+    "id": "q105",
+    "code": "$a = ['3' => 'A', 3 => 'B', '03' => 'C'];\necho count($a) . ':' . $a[3];",
+    "expected": "2:B"
+  },
+  {
+    "id": "q106",
+    "code": "$a = [0 => 'A', 4 => 'B'];\nunset($a[4]);\n$a[] = 'C';\necho implode(',', array_keys($a));",
+    "expected": "0,5"
+  },
+  {
+    "id": "q107",
+    "code": "$a = ['x' => null];\necho (int)isset($a['x']) . ':' . (int)array_key_exists('x', $a);",
+    "expected": "0:1"
+  },
+  {
+    "id": "q108",
+    "code": "$value = '0';\necho (int)empty($value) . ':' . (int)isset($value);",
+    "expected": "1:1"
+  },
+  {
+    "id": "q109",
+    "code": "$n = 6;\necho '$n' . ':' . \"$n\";",
+    "expected": "$n:6"
+  },
+  {
+    "id": "q110",
+    "code": "$a = (int)'12.9';\n$b = (bool)'false';\necho $a . ':' . (int)$b;",
+    "expected": "12:1"
+  },
+  {
+    "id": "q111",
+    "code": "const LIMIT = 8;\n$LIMIT = 3;\necho LIMIT + $LIMIT;",
+    "expected": "11"
+  },
+  {
+    "id": "q112",
+    "code": "$rows = [['score' => 2], ['score' => 7]];\n$rows[0]['score'] += $rows[1]['score'];\necho $rows[0]['score'] . ':' . $rows[1]['score'];",
+    "expected": "9:7"
+  },
+  {
+    "id": "q113",
+    "code": "[$a, , $c] = [10, 20, 30];\necho $c - $a;",
+    "expected": "20"
+  },
+  {
+    "id": "q114",
+    "code": "$a = ['x' => 1, 'y' => 2];\n$b = ['x' => 9, 'z' => 3];\n$c = $a + $b;\necho $c['x'] . ':' . count($c);",
+    "expected": "1:3"
+  },
+  {
+    "id": "q115",
+    "code": "$name = 'score';\n$score = 4;\n$$name += 3;\necho $score;",
+    "expected": "7"
+  },
+  {
+    "id": "q116",
+    "code": "echo (int)(0 == 'cat') . ':' . (int)(0 == '0');",
+    "expected": "0:1"
+  },
+  {
+    "id": "q117",
+    "code": "$value = 0;\necho ($value ?? 9) . ':' . ($value ?: 9);",
+    "expected": "0:9"
+  },
+  {
+    "id": "q118",
+    "code": "$ok = false or true;\necho (int)$ok;",
+    "expected": "0"
+  },
+  {
+    "id": "q119",
+    "code": "$n = 2;\nfalse && ($n = 8);\ntrue || ($n = 9);\necho $n;",
+    "expected": "2"
+  },
+  {
+    "id": "q120",
+    "code": "$n = 3;\n$a = $n++;\n$b = ++$n;\necho $a . ':' . $b . ':' . $n;",
+    "expected": "3:5:5"
+  },
+  {
+    "id": "q121",
+    "code": "echo -2 ** 2 . ':' . (-2) ** 2;",
+    "expected": "-4:4"
+  },
+  {
+    "id": "q122",
+    "code": "echo (-7 % 3) . ':' . (7 % -3);",
+    "expected": "-1:1"
+  },
+  {
+    "id": "q123",
+    "code": "$values = [2, '2', 3];\n$count = 0;\nforeach ($values as $v) { if ($v === 2) { $count++; } }\necho $count;",
+    "expected": "1"
+  },
+  {
+    "id": "q124",
+    "code": "$s = 'A';\n$s .= 2 + 3;\necho $s;",
+    "expected": "A5"
+  },
+  {
+    "id": "q126",
+    "code": "$total = 0;\nforeach ([3, 6, 8, 9] as $n) {\n    if ($n % 3 !== 0) { continue; }\n    $total += $n;\n}\necho $total;",
+    "expected": "18"
+  },
+  {
+    "id": "q127",
+    "code": "$sum = 0;\nforeach ([2, 4, 7, 1] as $n) {\n    if ($n > 5) { break; }\n    $sum += $n;\n}\necho $sum;",
+    "expected": "6"
+  },
+  {
+    "id": "q128",
+    "code": "$hits = 0;\nfor ($i = 1; $i <= 3; $i++) {\n    for ($j = 1; $j <= 3; $j++) {\n        if ($j === 2) { continue 2; }\n        $hits++;\n    }\n}\necho $hits;",
+    "expected": "3"
+  },
+  {
+    "id": "q129",
+    "code": "$n = 0;\nfor ($i = 0; $i < 3; $i++) {\n    for ($j = 0; $j < 3; $j++) {\n        $n++;\n        if ($j === 1) { break 2; }\n    }\n}\necho $n;",
+    "expected": "2"
+  },
+  {
+    "id": "q130",
+    "code": "$n = 1;\n$s = 0;\nwhile ($n < 5) {\n    $n += 2;\n    $s += $n;\n}\necho $s;",
+    "expected": "8"
+  },
+  {
+    "id": "q131",
+    "code": "$n = 5;\ndo {\n    $n--;\n} while ($n < 3);\necho $n;",
+    "expected": "4"
+  },
+  {
+    "id": "q132",
+    "code": "$s = '';\nswitch (2) {\n    case 1: $s .= 'A';\n    case 2: $s .= 'B';\n    case 3: $s .= 'C'; break;\n    default: $s .= 'D';\n}\necho $s;",
+    "expected": "BC"
+  },
+  {
+    "id": "q133",
+    "code": "$status = 'new';\n$text = match ($status) {\n    'new', 'draft' => 'edit',\n    'done' => 'view',\n    default => 'unknown',\n};\necho $text;",
+    "expected": "edit"
+  },
+  {
+    "id": "q134",
+    "code": "$a = [1, 2, 3];\nforeach ($a as $v) { $v *= 2; }\necho implode(',', $a);",
+    "expected": "1,2,3"
+  },
+  {
+    "id": "q135",
+    "code": "$a = [1, 2];\nforeach ($a as &$v) { $v++; }\nunset($v);\n$v = 9;\necho implode(',', $a);",
+    "expected": "2,3"
+  },
+  {
+    "id": "q136",
+    "code": "$a = ['red' => 2, 'blue' => 4];\n$s = '';\nforeach ($a as $k => $v) {\n    if ($v > 2) { $s .= $k; }\n}\necho $s;",
+    "expected": "blue"
+  },
+  {
+    "id": "q137",
+    "code": "$score = 85;\nif ($score >= 60) { echo 'pass'; }\nelseif ($score >= 80) { echo 'excellent'; }\nelse { echo 'retry'; }",
+    "expected": "pass"
+  },
+  {
+    "id": "q138",
+    "code": "$s = '';\nfor ($i = 1; $i < 6; $i += 2) {\n    $s .= $i;\n}\necho $s;",
+    "expected": "135"
+  },
+  {
+    "id": "q139",
+    "code": "$stock = ['pen' => 3, 'book' => 1];\nforeach (['pen', 'pen', 'book', 'book'] as $item) {\n    if ($stock[$item] > 0) { $stock[$item]--; }\n}\necho $stock['pen'] . ':' . $stock['book'];",
+    "expected": "1:0"
+  },
+  {
+    "id": "q140",
+    "code": "$a = [4, 7, 2];\n$b = array_filter($a, fn($n) => $n > 3);\necho implode(',', array_keys($b));",
+    "expected": "0,1"
+  },
+  {
+    "id": "q141",
+    "code": "$a = [2 => 'A', 5 => 'B'];\n$b = array_values($a);\necho $b[1];",
+    "expected": "B"
+  },
+  {
+    "id": "q142",
+    "code": "$a = [5 => 'A'];\n$b = [5 => 'B'];\n$c = array_merge($a, $b);\necho implode(',', $c) . ':' . implode(',', array_keys($c));",
+    "expected": "A,B:0,1"
+  },
+  {
+    "id": "q143",
+    "code": "$pos = strpos('abc', 'a');\necho $pos !== false ? 'found' : 'missing';",
+    "expected": "found"
+  },
+  {
+    "id": "q144",
+    "code": "$parts = explode(',', 'A,,C');\necho count($parts) . ':' . strlen($parts[1]);",
+    "expected": "3:0"
+  },
+  {
+    "id": "q145",
+    "code": "$n = 0;\n$s = str_replace('a', 'X', 'banana', $n);\necho $s . ':' . $n;",
+    "expected": "bXnXnX:3"
+  },
+  {
+    "id": "q146",
+    "code": "$rows = [['price' => 5], ['price' => 8]];\n$prices = array_column($rows, 'price');\necho array_sum($prices);",
+    "expected": "13"
+  },
+  {
+    "id": "q147",
+    "code": "$a = ['A', 'B', 'C', 'D'];\n$b = array_slice($a, -2, 1);\necho implode(',', $b) . ':' . count($a);",
+    "expected": "C:4"
+  },
+  {
+    "id": "q148",
+    "code": "$ok = preg_match('/^[0-9]{3}$/', 'A123');\necho $ok;",
+    "expected": "0"
+  },
+  {
+    "id": "q149",
+    "code": "function grow($n) { $n += 4; return $n; }\n$a = 3;\n$b = grow($a);\necho $a . ':' . $b;",
+    "expected": "3:7"
+  },
+  {
+    "id": "q150",
+    "code": "function addTo(&$total, $n = 2) { $total += $n; }\n$sum = 1;\naddTo($sum);\naddTo($sum, 4);\necho $sum;",
+    "expected": "7"
+  },
+  {
+    "id": "q151",
+    "code": "$rate = 2;\n$f = function ($x) use ($rate) { return $x * $rate; };\n$rate = 5;\necho $f(3);",
+    "expected": "6"
+  },
+  {
+    "id": "q152",
+    "code": "$n = 1;\n$f = function () use (&$n) { $n++; };\n$f();\n$f();\necho $n;",
+    "expected": "3"
+  },
+  {
+    "id": "q153",
+    "code": "function tick() { static $n = 0; return ++$n; }\n$a = tick();\n$b = tick();\necho $a . ':' . $b;",
+    "expected": "1:2"
+  },
+  {
+    "id": "q154",
+    "code": "function sumDown($n) {\n    if ($n <= 0) { return 0; }\n    return $n + sumDown($n - 1);\n}\necho sumDown(3);",
+    "expected": "6"
+  },
+  {
+    "id": "q155",
+    "code": "function label($name, $prefix = 'Hi', $suffix = '!') {\n    return $prefix . ' ' . $name . $suffix;\n}\necho label(suffix: '?', name: 'Mio');",
+    "expected": "Hi Mio?"
+  },
+  {
+    "id": "q156",
+    "code": "$a = new DateTimeImmutable('2026-10-10', new DateTimeZone('UTC'));\n$b = $a->modify('+2 days');\necho $a->format('d') . ':' . $b->format('d');",
+    "expected": "10:12"
+  },
+  {
+    "id": "q157",
+    "code": "$a = new DateTimeImmutable('2026-10-10', new DateTimeZone('UTC'));\n$b = new DateTimeImmutable('2026-10-13', new DateTimeZone('UTC'));\necho $a->diff($b)->format('%a');",
+    "expected": "3"
+  },
+  {
+    "id": "q158",
+    "code": "$d = new DateTimeImmutable('2026-01-01 00:00:00', new DateTimeZone('UTC'));\n$j = $d->setTimezone(new DateTimeZone('Asia/Tokyo'));\necho $j->format('H:i');",
+    "expected": "09:00"
+  },
+  {
+    "id": "q159",
+    "code": "$items = new ArrayObject(['A', 'B']);\n$items->append('C');\necho $items->count() . ':' . $items[2];",
+    "expected": "3:C"
+  },
+  {
+    "id": "q160",
+    "code": "try {\n    throw new RuntimeException('bad', 7);\n} catch (Exception $e) {\n    echo $e->getMessage() . ':' . $e->getCode();\n}",
+    "expected": "bad:7"
+  },
+  {
+    "id": "q161",
+    "code": "$it = new ArrayIterator(['x' => 2, 'y' => 5]);\n$sum = 0;\nforeach ($it as $value) { $sum += $value; }\necho $sum;",
+    "expected": "7"
+  },
+  {
+    "id": "q162",
+    "code": "$d = new DateTimeImmutable('2026-01-01 10:00:00', new DateTimeZone('UTC'));\n$next = $d->add(new DateInterval('PT90M'));\necho $next->format('H:i');",
+    "expected": "11:30"
+  },
+  {
+    "id": "q164",
+    "code": "$_GET = ['page' => '2'];\necho (int)($_GET['page'] === 2) . ':' . ((int)$_GET['page'] + 1);",
+    "expected": "0:3"
+  },
+  {
+    "id": "q165",
+    "code": "$_POST = ['name' => ''];\n$name = $_POST['name'] ?? 'guest';\necho '[' . $name . ']';",
+    "expected": "[]"
+  },
+  {
+    "id": "q167",
+    "code": "$input = '<b>A&B</b>';\necho htmlspecialchars($input, ENT_QUOTES, 'UTF-8');",
+    "expected": "&lt;b&gt;A&amp;B&lt;/b&gt;"
+  },
+  {
+    "id": "q168",
+    "code": "$value = filter_var('0', FILTER_VALIDATE_INT);\necho $value !== false ? 'valid' : 'invalid';",
+    "expected": "valid"
+  },
+  {
+    "id": "q179",
+    "code": "class Score { public int $value = 0; }\n$a = new Score();\n$b = new Score();\n$a->value = 7;\necho $a->value . ':' . $b->value;",
+    "expected": "7:0"
+  },
+  {
+    "id": "q180",
+    "code": "class Box { public int $n = 1; }\n$a = new Box();\n$b = $a;\n$b->n = 4;\necho $a->n;",
+    "expected": "4"
+  },
+  {
+    "id": "q181",
+    "code": "class Item { public int $price = 8; }\n$a = new Item();\n$b = clone $a;\n$b->price = 3;\necho $a->price . ':' . $b->price;",
+    "expected": "8:3"
+  },
+  {
+    "id": "q182",
+    "code": "class User {\n    public function __construct(public string $name = 'guest') {}\n}\n$u = new User();\necho $u->name;",
+    "expected": "guest"
+  },
+  {
+    "id": "q183",
+    "code": "class Base { public int $n; public function __construct() { $this->n = 2; } }\nclass Child extends Base {\n    public function __construct() { parent::__construct(); $this->n += 3; }\n}\necho (new Child())->n;",
+    "expected": "5"
+  },
+  {
+    "id": "q184",
+    "code": "class Base { public function text() { return 'A'; } }\nclass Child extends Base { public function text() { return parent::text() . 'B'; } }\necho (new Child())->text();",
+    "expected": "AB"
+  },
+  {
+    "id": "q185",
+    "code": "class Base { protected int $n = 6; }\nclass Child extends Base { public function read() { return $this->n; } }\necho (new Child())->read();",
+    "expected": "6"
+  },
+  {
+    "id": "q186",
+    "code": "class Counter { public static int $n = 0; public function hit() { self::$n++; } }\n$a = new Counter(); $b = new Counter();\n$a->hit(); $b->hit();\necho Counter::$n;",
+    "expected": "2"
+  },
+  {
+    "id": "q187",
+    "code": "class Base {\n    const NAME = 'A';\n    public static function text() { return self::NAME . static::NAME; }\n}\nclass Child extends Base { const NAME = 'B'; }\necho Child::text();",
+    "expected": "AB"
+  },
+  {
+    "id": "q188",
+    "code": "interface Named { public function name(): string; }\nclass Cat implements Named { public function name(): string { return 'cat'; } }\n$c = new Cat();\necho (int)($c instanceof Named) . ':' . $c->name();",
+    "expected": "1:cat"
+  },
+  {
+    "id": "q189",
+    "code": "abstract class Shape { abstract public function area(): int; }\nclass Square extends Shape { public function area(): int { return 4; } }\necho (new Square())->area();",
+    "expected": "4"
+  },
+  {
+    "id": "q190",
+    "code": "trait T { public function label() { return 'trait'; } }\nclass C { use T; public function label() { return 'class'; } }\necho (new C())->label();",
+    "expected": "class"
+  },
+  {
+    "id": "q191",
+    "code": "class Tag { public function __toString(): string { return 'php'; } }\n$tag = new Tag();\necho '[' . $tag . ']';",
+    "expected": "[php]"
+  },
+  {
+    "id": "q192",
+    "code": "class Total {\n    public int $n = 0;\n    public function add(int $x): self { $this->n += $x; return $this; }\n}\n$t = new Total();\n$t->add(2)->add(5);\necho $t->n;",
+    "expected": "7"
+  },
+  {
+    "id": "q196",
+    "code": "class Pair { public int $n = 1; }\n$a = new Pair(); $b = new Pair();\necho (int)($a == $b) . ':' . (int)($a === $b);",
+    "expected": "1:0"
+  },
+  {
+    "id": "q197",
+    "code": "function f() {\n    try { return 'A'; }\n    finally { echo 'F'; }\n}\necho f();",
+    "expected": "FA"
+  },
+  {
+    "id": "q198",
+    "code": "try {\n    throw new Error('E');\n} catch (Exception $e) { echo 'X'; }\ncatch (Throwable $e) { echo 'T'; }",
+    "expected": "T"
+  },
+  {
+    "id": "q199",
+    "code": "function values() { yield 2; yield 5; }\n$sum = 0;\nforeach (values() as $n) { $sum += $n; }\necho $sum;",
+    "expected": "7"
+  },
+  {
+    "id": "q200",
+    "code": "namespace Study;\nuse DateTimeImmutable as Clock;\n$d = new Clock('2026-02-03');\necho $d->format('m-d');",
+    "expected": "02-03"
+  },
+  {
+    "id": "q203",
+    "code": "$a = 2;\n$b =& $a;\n$c = $b;\n$b = 8;\necho $a . ':' . $c;",
+    "expected": "8:2"
+  },
+  {
+    "id": "q204",
+    "code": "$a = [true => 'yes', 1 => 'one', false => 'no'];\necho count($a) . ':' . $a[1];",
+    "expected": "2:one"
+  },
+  {
+    "id": "q205",
+    "code": "$s = 'PHP8';\necho $s[0] . $s[3];",
+    "expected": "P8"
+  },
+  {
+    "id": "q206",
+    "code": "$x = null;\necho gettype($x) . ':' . (int)isset($x);",
+    "expected": "NULL:0"
+  },
+  {
+    "id": "q207",
+    "code": "['y' => $a, 'x' => $b] = ['x' => 4, 'y' => 9];\necho $a - $b;",
+    "expected": "5"
+  },
+  {
+    "id": "q208",
+    "code": "$x = -3.9;\necho (int)$x;",
+    "expected": "-3"
+  },
+  {
+    "id": "q209",
+    "code": "$a = ['x' => 1, 'y' => 2];\n$a['x'] = 8;\necho implode(',', array_keys($a));",
+    "expected": "x,y"
+  },
+  {
+    "id": "q215",
+    "code": "$a = (false or true);\n$b = false || true;\necho (int)$a . ':' . (int)$b;",
+    "expected": "1:1"
+  },
+  {
+    "id": "q216",
+    "code": "$a = ['x' => null, 'y' => 0];\n$a['x'] ??= 4;\n$a['y'] ??= 5;\necho $a['x'] . ':' . $a['y'];",
+    "expected": "4:0"
+  },
+  {
+    "id": "q217",
+    "code": "echo (8 <=> 3) . ':' . (4 <=> 4) . ':' . (1 <=> 6);",
+    "expected": "1:0:-1"
+  },
+  {
+    "id": "q218",
+    "code": "$a = 6;\n$b = 3;\necho $a & $b;",
+    "expected": "2"
+  },
+  {
+    "id": "q219",
+    "code": "echo intdiv(17, 5) . ':' . (17 % 5);",
+    "expected": "3:2"
+  },
+  {
+    "id": "q220",
+    "code": "$n = 4;\n$label = $n > 5 ? 'large' : ($n > 2 ? 'middle' : 'small');\necho $label;",
+    "expected": "middle"
+  },
+  {
+    "id": "q221",
+    "code": "$a = ['x' => 1, 'y' => 2];\n$b = ['y' => 2, 'x' => 1];\necho (int)($a == $b) . ':' . (int)($a === $b);",
+    "expected": "1:0"
+  },
+  {
+    "id": "q225",
+    "code": "$out = '';\nforeach ([1, 2, 3, 4] as $n) {\n    $out .= $n % 2 === 0 ? 'E' : 'O';\n}\necho $out;",
+    "expected": "OEOE"
+  },
+  {
+    "id": "q226",
+    "code": "$v = 0;\nforeach ([4, 9] as $v) {}\necho $v;",
+    "expected": "9"
+  },
+  {
+    "id": "q227",
+    "code": "$n = 7;\nforeach ([] as $v) { $n++; }\necho $n;",
+    "expected": "7"
+  },
+  {
+    "id": "q228",
+    "code": "$n = 0;\nforeach ([1, 2, 3] as $a) {\n    foreach ([1, 2, 3] as $b) {\n        if ($a < $b) { $n++; }\n    }\n}\necho $n;",
+    "expected": "3"
+  },
+  {
+    "id": "q229",
+    "code": "$v = '2';\nswitch ($v) {\n    case 2: echo 'number'; break;\n    default: echo 'other';\n}",
+    "expected": "number"
+  },
+  {
+    "id": "q230",
+    "code": "$v = '2';\necho match ($v) { 2 => 'int', '2' => 'string', default => 'other' };",
+    "expected": "string"
+  },
+  {
+    "id": "q231",
+    "code": "$n = 0;\n$result = match (1) { 1 => 'A', 2 => ++$n };\necho $result . ':' . $n;",
+    "expected": "A:0"
+  },
+  {
+    "id": "q232",
+    "code": "for ($i = 0; $i < 3; $i++) {}\necho $i;",
+    "expected": "3"
+  },
+  {
+    "id": "q233",
+    "code": "$out = '';\nfor ($i = 0; $i < 4; $i++) {\n    if ($i < 2) { continue; }\n    $out .= $i;\n}\necho $out;",
+    "expected": "23"
+  },
+  {
+    "id": "q238",
+    "code": "$a = array_map(fn($n) => $n * $n, [2, 3, 4]);\necho implode(',', $a);",
+    "expected": "4,9,16"
+  },
+  {
+    "id": "q239",
+    "code": "$sum = array_reduce([2, 3], fn($carry, $n) => $carry + $n, 10);\necho $sum;",
+    "expected": "15"
+  },
+  {
+    "id": "q240",
+    "code": "$a = ['x' => 9, 'y' => 2];\nasort($a);\necho implode(',', array_keys($a));",
+    "expected": "y,x"
+  },
+  {
+    "id": "q241",
+    "code": "$a = ['A', 'B'];\n$key = array_search('A', $a, true);\necho $key === false ? 'missing' : 'key=' . $key;",
+    "expected": "key=0"
+  },
+  {
+    "id": "q242",
+    "code": "$a = json_decode('{\"n\":4}', true);\necho $a['n'] + 2;",
+    "expected": "6"
+  },
+  {
+    "id": "q243",
+    "code": "echo substr('abcdef', -3, 2);",
+    "expected": "de"
+  },
+  {
+    "id": "q247",
+    "code": "function total(int ...$values): int { return array_sum($values); }\necho total(2, 4, 6);",
+    "expected": "12"
+  },
+  {
+    "id": "q248",
+    "code": "function mix($a, $b) { return $a * 10 + $b; }\n$args = [3, 7];\necho mix(...$args);",
+    "expected": "37"
+  },
+  {
+    "id": "q249",
+    "code": "$base = 4;\n$f = fn($x) => $x + $base;\n$base = 10;\necho $f(2);",
+    "expected": "6"
+  },
+  {
+    "id": "q250",
+    "code": "function run() { $n = 3; }\necho gettype(run());",
+    "expected": "NULL"
+  },
+  {
+    "id": "q251",
+    "code": "function signLabel($n) {\n    if ($n < 0) { return 'minus'; }\n    return 'other';\n}\necho signLabel(-2);",
+    "expected": "minus"
+  },
+  {
+    "id": "q255",
+    "code": "$a = new DateTime('2026-05-01', new DateTimeZone('UTC'));\n$b = $a;\n$b->modify('+1 day');\necho $a->format('Y-m-d');",
+    "expected": "2026-05-02"
+  },
+  {
+    "id": "q256",
+    "code": "$a = new DateTime('2026-05-01', new DateTimeZone('UTC'));\n$b = clone $a;\n$b->modify('+1 day');\necho $a->format('d') . ':' . $b->format('d');",
+    "expected": "01:02"
+  },
+  {
+    "id": "q257",
+    "code": "$it = new ArrayIterator(['A', 'B', 'C']);\n$it->rewind();\n$it->next();\necho $it->key() . ':' . $it->current();",
+    "expected": "1:B"
+  },
+  {
+    "id": "q262",
+    "code": "$_GET = ['ids' => ['3', '5']];\n$ids = array_map('intval', $_GET['ids']);\necho array_sum($ids);",
+    "expected": "8"
+  },
+  {
+    "id": "q263",
+    "code": "$_POST = ['name' => '   '];\n$name = trim($_POST['name'] ?? '');\necho $name === '' ? 'guest' : $name;",
+    "expected": "guest"
+  },
+  {
+    "id": "q264",
+    "code": "$_POST = ['name' => 'A', 'role' => 'admin'];\n$data = ['name' => $_POST['name']];\necho count($data);",
+    "expected": "1"
+  },
+  {
+    "id": "q277",
+    "code": "class Level {\n    private int $n = 0;\n    public function set(int $n): void { $this->n = max(0, $n); }\n    public function get(): int { return $this->n; }\n}\n$l = new Level(); $l->set(-4);\necho $l->get();",
+    "expected": "0"
+  },
+  {
+    "id": "q278",
+    "code": "class Animal { public function sound() { return 'A'; } }\nclass Dog extends Animal { public function sound() { return 'D'; } }\nfunction speak(Animal $a) { return $a->sound(); }\necho speak(new Dog());",
+    "expected": "D"
+  },
+  {
+    "id": "q279",
+    "code": "trait A { public function text() { return 'A'; } }\ntrait B { public function text() { return 'B'; } }\nclass C { use A, B { B::text insteadof A; } }\necho (new C())->text();",
+    "expected": "B"
+  },
+  {
+    "id": "q280",
+    "code": "class Inner { public int $n = 1; }\nclass Outer { public Inner $item; }\n$a = new Outer(); $a->item = new Inner();\n$b = clone $a;\n$b->item->n = 7;\necho $a->item->n;",
+    "expected": "7"
+  },
+  {
+    "id": "q281",
+    "code": "class Inner { public int $n = 1; }\nclass Outer { public Inner $item; public function __clone() { $this->item = clone $this->item; } }\n$a = new Outer(); $a->item = new Inner();\n$b = clone $a;\n$b->item->n = 7;\necho $a->item->n;",
+    "expected": "1"
+  },
+  {
+    "id": "q282",
+    "code": "class Twice { public function __invoke(int $n): int { return $n * 2; } }\n$f = new Twice();\necho $f(6);",
+    "expected": "12"
+  },
+  {
+    "id": "q283",
+    "code": "class Data { public function __get($name) { return strtoupper($name); } }\n$d = new Data();\necho $d->foo;",
+    "expected": "FOO"
+  },
+  {
+    "id": "q284",
+    "code": "class Plan { public const PRICE = 120; }\necho Plan::PRICE * 2;",
+    "expected": "240"
+  },
+  {
+    "id": "q285",
+    "code": "class Box { public int $n = 1; }\n$a = new Box(); $b = $a;\n$b = new Box();\n$b->n = 9;\necho $a->n . ':' . $b->n;",
+    "expected": "1:9"
+  },
+  {
+    "id": "q296",
+    "code": "try { throw new InvalidArgumentException('bad'); }\ncatch (InvalidArgumentException $e) { echo 'specific'; }\ncatch (Exception $e) { echo 'general'; }",
+    "expected": "specific"
+  },
+  {
+    "id": "q297",
+    "code": "function resultValue() {\n    try { return 'try'; }\n    finally { return 'finally'; }\n}\necho resultValue();",
+    "expected": "finally"
+  }
+]

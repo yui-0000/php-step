@@ -63,7 +63,7 @@ class AppTests(unittest.TestCase):
 
     def test_html_assets_and_public_questions(self):
         self.assertEqual(self.client.get('/').status_code, 200)
-        self.assertEqual(len(self.client.get('/api/questions').get_json()['questions']), 100)
+        self.assertEqual(len(self.client.get('/api/questions').get_json()['questions']), 300)
         for asset in ['app.js', 'core.js', 'questions.js', 'sync.js', 'style.css', 'icon-192.png', 'icon-512.png']:
             with self.client.get('/static/' + asset) as response:
                 self.assertEqual(response.status_code, 200)
@@ -93,6 +93,19 @@ class AppTests(unittest.TestCase):
         for pending in [None, {'id': 'q02', 'selected': [0]}, {'id': 'q01', 'selected': []}, {'id': 'q01', 'selected': [99]}, {'id': 'q01', 'selected': [0, 0]}]:
             payload['session']['pending'] = pending
             self.assertEqual(self.put(self.client, info['csrf'], revision=1, payload=payload).status_code, 400)
+
+
+    def test_difficulty_and_latest_question_roundtrip(self):
+        info = self.client.get('/api/state').get_json()
+        payload = state()
+        payload['settings']['difficulty'] = 'practice'
+        q = next(q for q in self.client.get('/api/questions').get_json()['questions'] if q['id'] == 'q300')
+        response = {'selected': q['answer'], 'correct': True, 'confidence': 'unsure'}
+        payload['session'] = {'mode': 'learn', 'ids': ['q300'], 'index': 0, 'responses': {'q300': response}}
+        self.assertEqual(self.put(self.client, info['csrf'], payload=payload).status_code, 200)
+        self.assertEqual(self.client.get('/api/state').get_json()['state'], payload)
+        payload['settings']['difficulty'] = 'invalid'
+        self.assertEqual(self.put(self.client, info['csrf'], revision=1, payload=payload).status_code, 400)
 
 
 if __name__ == '__main__':

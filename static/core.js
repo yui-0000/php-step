@@ -1,7 +1,7 @@
 import {questions} from './questions.js';
 export const STORAGE_KEY='php-step:v1';
 export const dayKey=(date=new Date())=>`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
-export const initialState=()=>({version:1,settings:{examDate:'2026-11-16',dailyGoal:15},records:{},questionNotes:{},daily:{},session:null,lastResult:null});
+export const initialState=()=>({version:1,settings:{examDate:'2026-11-16',dailyGoal:15,difficulty:'all'},records:{},questionNotes:{},daily:{},session:null,lastResult:null});
 export const isCorrect=(question,selection)=>selection.length===question.answer.length && question.answer.every(i=>selection.includes(i));
 export const needsReview=r=>!!r&&(r.bookmark||!r.correct||r.confidence!=='sure');
 export function recordAnswer(state,id,selection,confidence,now=Date.now()){
@@ -13,8 +13,8 @@ export function recordAnswer(state,id,selection,confidence,now=Date.now()){
  const key=dayKey(new Date(now));state.daily[key]=(state.daily[key]||0)+1;
  return correct;
 }
-export function selectQuestions(state,{mode='learn',topic,count=5,now=Date.now(),random=Math.random}={}){
- let pool=questions.filter(q=>!topic||q.topic===topic);
+export function selectQuestions(state,{mode='learn',topic,count=5,difficulty=state.settings?.difficulty??'all',now=Date.now(),random=Math.random}={}){
+ let pool=questions.filter(q=>(!topic||q.topic===topic)&&(mode==='review'||difficulty==='all'||q.difficulty===difficulty));
  if(mode==='review')pool=pool.filter(q=>needsReview(state.records[q.id]));
  if(mode==='quiz')return pool.map(q=>({q,n:random()})).sort((a,b)=>a.n-b.n).slice(0,count).map(x=>x.q.id);
  const score=q=>{const r=state.records[q.id];if(!r)return 20;if(needsReview(r))return (r.dueAt<=now?0:10)+(r.correct?3:0);return r.dueAt<=now?30:40;};
@@ -30,6 +30,7 @@ const ids=new Set(questions.map(q=>q.id));
 const confidences=['sure','unsure','unknown'];
 export function validateState(s){
  if(!s||s.version!==1||!s.settings||!validDate(s.settings.examDate)||!integer(s.settings.dailyGoal)||s.settings.dailyGoal<5||s.settings.dailyGoal>100)throw Error('設定が正しくありません');
+ if(s.settings.difficulty!==undefined&&!['all','basic','standard','practice'].includes(s.settings.difficulty))throw Error('難易度の設定が正しくありません');
  if(!s.records||Array.isArray(s.records)||typeof s.records!=='object'||!s.daily||Array.isArray(s.daily)||typeof s.daily!=='object')throw Error('履歴が正しくありません');
  for(const [id,r]of Object.entries(s.records)){if(!ids.has(id)||!r||!integer(r.attempts)||r.attempts<1||typeof r.correct!=='boolean'||!confidences.includes(r.confidence)||!integer(r.streak)||!integer(r.lastAt)||!integer(r.dueAt)||(r.bookmark!==undefined&&typeof r.bookmark!=='boolean'))throw Error('問題の履歴が正しくありません');}
  for(const [key,n]of Object.entries(s.daily))if(!validDate(key)||!integer(n))throw Error('日別履歴が正しくありません');

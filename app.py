@@ -27,6 +27,8 @@ def validate_state(state):
     date.fromisoformat(settings.get("examDate", ""))
     if not valid_int(settings.get("dailyGoal"), 5, 100):
         raise ValueError("Invalid daily goal")
+    if settings.get("difficulty", "all") not in ("all", "basic", "standard", "practice"):
+        raise ValueError("Invalid difficulty")
     records, daily = state.get("records"), state.get("daily")
     if not isinstance(records, dict) or not isinstance(daily, dict) or len(daily) > 36600:
         raise ValueError("Invalid records")

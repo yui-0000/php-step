@@ -108,14 +108,14 @@ test('backup roundtrip preserves progress and rejects invalid or foreign IDs',()
  assert.throws(()=>validateState(foreign));
 });
 test('question bank has unique stable IDs, answers, explanations, and HTTPS references',()=>{
- assert.equal(questions.length,100);assert.equal(new Set(questions.map(q=>q.id)).size,100);
+ assert.equal(questions.length,300);assert.equal(new Set(questions.map(q=>q.id)).size,300);
  for(const q of questions){assert.ok(content.topics.some(t=>t.id===q.topic));assert.ok(q.answer.every(i=>Number.isInteger(i)&&i>=0&&i<q.options.length));assert.ok(q.easy&&q.trace&&q.explanation);assert.match(q.reference,/^https:\/\/www\.php\.net\/manual\/ja\//);}
 });
-test('100-question edition covers every planned topic and preserves new question progress',()=>{
- const distribution={intro:3,basics:12,operators:10,control:14,builtin:9,functions:8,classes:7,request:10,database:5,oop:17,advanced:5};
+test('300-question edition covers every planned topic and preserves new question progress',()=>{
+ const distribution={intro:7,basics:37,operators:30,control:41,builtin:27,functions:23,classes:22,request:30,database:15,oop:54,advanced:14};
  for(const [topic,count] of Object.entries(distribution))assert.equal(questions.filter(q=>q.topic===topic).length,count,topic);
  assert.ok(questions.filter(q=>q.answer.length>1).length>=10);
- assert.equal(new Set(questions.map(q=>q.title+'\n'+q.code)).size,100);
+ assert.equal(new Set(questions.map(q=>q.title+'\n'+q.code)).size,300);
  for(const q of questions){assert.equal(new Set(q.answer).size,q.answer.length);assert.ok(q.answer.length>0&&q.answer.length<q.options.length);assert.equal(new Set(q.options).size,q.options.length);}
  const s=initialState(),q=questions.find(q=>q.id==='q100');
  recordAnswer(s,q.id,q.answer,'unsure');
@@ -123,4 +123,37 @@ test('100-question edition covers every planned topic and preserves new question
  const restored=validateState(JSON.parse(JSON.stringify(s)));
  assert.deepEqual(selectQuestions(restored,{mode:'review'}),['q100']);
  assert.match(questionsText(restored.questionNotes),/追記を復習する/);
+});
+
+test('difficulty filters learning and checks, while review retains weak questions at every level',()=>{
+ const s=initialState();s.settings.difficulty='practice';
+ const levelOf=id=>questions.find(q=>q.id===id).difficulty;
+ for(const mode of ['learn','quiz']){
+  const picked=selectQuestions(s,{mode,count:10,random:()=>0.5});
+  assert.equal(picked.length,10);assert.ok(picked.every(id=>levelOf(id)==='practice'));
+ }
+ assert.deepEqual(selectQuestions(s,{topic:'intro'}),[]);
+ const p=questions.find(q=>q.difficulty==='practice');
+ recordAnswer(s,'q01',questions[0].answer,'unsure',1000);
+ recordAnswer(s,p.id,p.answer,'unknown',1000);
+ assert.deepEqual(new Set(selectQuestions(s,{mode:'review'})),new Set(['q01',p.id]));
+ const restored=validateState(JSON.parse(JSON.stringify(s)));
+ assert.equal(restored.settings.difficulty,'practice');
+ delete restored.settings.difficulty;assert.doesNotThrow(()=>validateState(restored));
+ assert.throws(()=>validateState({...s,settings:{...s.settings,difficulty:'invalid'}}));
+});
+test('new bank covers all levels and every new output exercise has a runtime fixture',async()=>{
+ const cases=JSON.parse(await readFile(new URL('./php-output-cases.json',import.meta.url),'utf8'));
+ assert.equal(cases.length,133);
+ for(const q of questions){assert.ok(['basic','standard','practice'].includes(q.difficulty));}
+ for(const q of questions.slice(100).filter(q=>q.code)){
+  const c=cases.find(c=>c.id===q.id);assert.ok(c,q.id);
+  assert.equal(c.code,q.code);assert.deepEqual(q.answer.map(i=>q.options[i]),[c.expected]);
+ }
+ const s=initialState(),q=questions.find(q=>q.id==='q300');
+ s.session={mode:'learn',ids:[q.id],index:0,responses:{}};
+ stageAnswer(s,q.answer);confirmConfidence(s,'unsure',1000);
+ saveQuestionNote(s,q.id,'モードを確認する',s.session.responses[q.id],1000);
+ assert.doesNotThrow(()=>validateState(JSON.parse(JSON.stringify(s))));
+ assert.deepEqual(selectQuestions(s,{mode:'review'}),['q300']);
 });
