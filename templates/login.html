@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#285c50"><meta name="robots" content="noindex,nofollow">
+  <title>合言葉で入る｜PHP STEP</title>
+  <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top"><span class="brand"><span class="brand-icon">&lt;/&gt;</span> PHP STEP</span></header>
+  <main style="max-width:520px">
+    <p class="eyebrow">いつもの学習場所へ</p><h1>合言葉で入る</h1>
+    <p>一緒に勉強するメンバーから教えてもらった合言葉を入力してください。</p>
+    <section class="card" style="margin-top:24px">
+      {% if error %}<p class="warning" role="alert">{{ error }}</p>{% endif %}
+      {% if entered %}
+        <p>このブラウザは入室済みです。</p><a class="btn" href="/">学習に戻る</a>
+        <form method="post" action="/logout" style="margin-top:20px">
+          <input type="hidden" name="csrf" value="{{ csrf }}">
+          <button class="btn secondary" type="submit">合言葉を入力し直す</button>
+        </form>
+      {% else %}
+        <form method="post" action="/login">
+          <input type="hidden" name="csrf" value="{{ csrf }}">
+          <label class="field">共通の合言葉
+            <input type="password" name="passphrase" autocomplete="current-password" required maxlength="128" aria-describedby="entrance-help">
+          </label>
+          <button class="btn" type="submit">学習を始める</button>
+        </form>
+      {% endif %}
+      <p class="muted" id="entrance-help">学習履歴は、このブラウザごとに保存されます。共用端末での利用は控えてください。</p>
+    </section>
+    <p class="muted">合言葉を忘れたときは、アプリの管理者に確認してください。入室は7日間有効です。</p>
+  </main>
+</body>
+</html>

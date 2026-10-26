@@ -9,6 +9,7 @@
 <body>
   <header class="top"><a href="#home" class="brand"><span class="brand-icon">&lt;/&gt;</span> PHP STEP<span class="edition">PHP8 初級</span></a><span id="network" class="network">端末に学習を保存</span></header>
   <main id="app" tabindex="-1"></main>
+  {% if config.ACCESS_ENABLED %}<p style="text-align:center;margin-bottom:100px"><a href="/login">合言葉の入室設定</a></p>{% endif %}
   <nav class="bottom" aria-label="メインメニュー"><a href="#home">⌂ <span>ホーム</span></a><a href="#topics">▤ <span>分野から学ぶ</span></a><a href="#review">↻ <span>苦手の復習</span></a><a href="#notes">✎ <span>質問ノート</span></a><a href="#settings">⚙ <span>設定</span></a></nav>
   <div id="toast" role="status" aria-live="polite"></div>
   <script type="module">import('/static/app.js').catch(() => { document.querySelector('#app').textContent = '読み込めませんでした。初回はインターネットに接続し、ページを再読み込みしてください。'; });</script>

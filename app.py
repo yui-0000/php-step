@@ -8,6 +8,7 @@ from pathlib import Path
 
 from flask import Flask, abort, jsonify, render_template, request, send_from_directory, session
 from peewee import CharField, IntegerField, Model, SqliteDatabase, TextField
+from access import init_access
 
 ROOT = Path(__file__).resolve().parent
 CONTENT = json.loads((ROOT / "data" / "questions.json").read_text(encoding="utf-8"))
@@ -161,6 +162,7 @@ def create_app(config=None):
     with db.connection_context():
         db.create_tables([Progress])
     app.extensions["progress_database"] = db
+    init_access(app, db)
 
     @app.before_request
     def connect_database():
