@@ -38,6 +38,17 @@ Python 3.13を選べない環境では、ここで止めて利用可能なバー
 合言葉は12〜128文字で、他のサービスのパスワードを使い回さず、推測されにくいものにします。
 入力中は文字が表示されません。2回入力すると、`instance/access.json` にハッシュだけを保存します。
 
+最低文字数を一時的に指定する場合は、修正版の `tools/set_passphrase.py` を公開先にも反映してから実行します。
+
+```bash
+python tools/set_passphrase.py --min-length 9
+```
+
+この指定は今回の入力にだけ適用します。通常の命令では引き続き12〜128文字です。
+仮設定の動作確認後、共有前に `python tools/set_passphrase.py` で長い合言葉へ変更してWebのReloadを押します。
+文字数を指定しただけで安全性を保証するものではありません。推測しやすい名前や連続する数字は避けます。
+既にZIPを展開済みの場合は、Filesで `php-step/tools` を開き、修正版の `set_passphrase.py` だけをアップロードして置き換えられます。
+
 ## 3. Web画面の設定
 
 1. Web → Add a new web app → 無料の標準ドメイン → Manual configuration → Python 3.13。
