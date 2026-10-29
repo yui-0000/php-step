@@ -24,8 +24,10 @@
         <form method="post" action="/login">
           <input type="hidden" name="csrf" value="{{ csrf }}">
           <label class="field">共通の合言葉
-            <input type="password" name="passphrase" autocomplete="current-password" required maxlength="128" aria-describedby="entrance-help">
+            <input id="passphrase" type="password" name="passphrase" autocomplete="current-password" required maxlength="128" aria-describedby="entrance-help">
           </label>
+          <button id="toggle-passphrase" class="btn secondary" type="button" aria-controls="passphrase" aria-pressed="false" hidden style="margin-bottom:20px">合言葉を表示</button>
+          <p class="muted" id="visibility-help" hidden>表示中は周りの人やスクリーンショットに合言葉が見えます。</p>
           <button class="btn" type="submit">学習を始める</button>
         </form>
       {% endif %}
@@ -33,5 +35,26 @@
     </section>
     <p class="muted">合言葉を忘れたときは、アプリの管理者に確認してください。入室は7日間有効です。</p>
   </main>
+  <script>
+    const phraseField = document.getElementById('passphrase');
+    const toggleButton = document.getElementById('toggle-passphrase');
+    const visibilityHelp = document.getElementById('visibility-help');
+    if (phraseField && toggleButton && visibilityHelp) {
+      function setVisible(visible) {
+        phraseField.type = visible ? 'text' : 'password';
+        toggleButton.textContent = visible ? '合言葉を隠す' : '合言葉を表示';
+        toggleButton.setAttribute('aria-pressed', String(visible));
+        visibilityHelp.hidden = !visible;
+      }
+      setVisible(false);
+      toggleButton.hidden = false;
+      toggleButton.addEventListener('click', () => setVisible(phraseField.type === 'password'));
+      phraseField.form.addEventListener('submit', () => setVisible(false));
+      window.addEventListener('pageshow', () => setVisible(false));
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) setVisible(false);
+      });
+    }
+  </script>
 </body>
 </html>
