@@ -27,3 +27,32 @@ test('changing the level preserves active session and unrelated settings',()=>{
  assert.deepEqual(c.state.session.ids,['q01']);assert.equal(saves,1);
  handler({target:{id:'learning-difficulty',value:'invalid'}});assert.equal(saves,1);
 });
+
+test('changing set size preserves the current session, progress and difficulty',()=>{
+ const c=context('practice');let handler,saves=0;
+ c.state.settings.questionCount=10;c.state.settings.examDate='2026-11-16';
+ c.state.session={ids:['q01','q02'],index:1,responses:{q01:{selected:[0],confidence:'sure',correct:true}}};
+ const before=JSON.stringify(c.state.session);
+ c.document.addEventListener=(name,fn)=>{handler=fn;};c.save=()=>{saves++;};
+ const picker=runInNewContext(helper+'practicePicker();',c);
+ assert.match(picker,/<option value="10" selected>10問/);
+ for(const n of [5,20,40])assert.match(picker,new RegExp(`value="${n}"`));
+ handler({target:{id:'learning-count',value:'40'}});
+ assert.equal(c.state.settings.questionCount,40);assert.equal(c.state.settings.difficulty,'practice');
+ assert.equal(JSON.stringify(c.state.session),before);assert.equal(saves,1);
+ for(const value of ['0','15','abc'])handler({target:{id:'learning-count',value}});
+ assert.equal(saves,1);
+});
+
+test('start uses selected size for practice and review, and ten for a check',()=>{
+ const c=context('all');c.state.settings.questionCount=20;
+ let requested;
+ c.selectQuestions=(state,options)=>{requested=options;return ['q01'];};c.goto=()=>{};
+ const start=source.slice(source.indexOf('function start('),source.indexOf('function study(){'));
+ runInNewContext(helper+start,c);
+ for(const [mode,topic,expected] of [['learn',undefined,20],['learn','basics',20],['review',undefined,20],['quiz',undefined,10]]){
+  c.state.session=null;c.mode=mode;c.topic=topic;
+  runInNewContext('start(mode,topic);',c);
+  assert.equal(requested.count,expected);
+ }
+});

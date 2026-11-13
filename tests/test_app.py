@@ -108,5 +108,20 @@ class AppTests(unittest.TestCase):
         self.assertEqual(self.put(self.client, info['csrf'], revision=1, payload=payload).status_code, 400)
 
 
+    def test_question_count_setting_roundtrip_and_legacy_backup(self):
+        info = self.client.get('/api/state').get_json()
+        payload = state()
+        for revision, count in enumerate([5, 10, 20, 40]):
+            payload['settings']['questionCount'] = count
+            self.assertEqual(self.put(self.client, info['csrf'], revision=revision, payload=payload).status_code, 200)
+            self.assertEqual(self.client.get('/api/state').get_json()['state']['settings']['questionCount'], count)
+        for value in [0, 6, 15, 41, '20', None, True, 10.0]:
+            payload['settings']['questionCount'] = value
+            self.assertEqual(self.put(self.client, info['csrf'], revision=4, payload=payload).status_code, 400)
+        self.assertEqual(self.client.get('/api/state').get_json()['state']['settings']['questionCount'], 40)
+        del payload['settings']['questionCount']
+        self.assertEqual(self.put(self.client, info['csrf'], revision=4, payload=payload).status_code, 200)
+
+
 if __name__ == '__main__':
     unittest.main()

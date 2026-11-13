@@ -30,6 +30,9 @@ def validate_state(state):
         raise ValueError("Invalid daily goal")
     if settings.get("difficulty", "all") not in ("all", "basic", "standard", "practice"):
         raise ValueError("Invalid difficulty")
+    question_count = settings.get("questionCount", 10)
+    if type(question_count) is not int or question_count not in (5, 10, 20, 40):
+        raise ValueError("Invalid question count")
     records, daily = state.get("records"), state.get("daily")
     if not isinstance(records, dict) or not isinstance(daily, dict) or len(daily) > 36600:
         raise ValueError("Invalid records")

@@ -87,7 +87,7 @@ test('an uncertain correct answer stays in review; confident repetitions space r
 test('weak questions get priority without excluding every new question',()=>{
  const s=initialState();
  questions.slice(0,8).forEach(q=>recordAnswer(s,q.id,[], 'unknown',0));
- const selected=selectQuestions(s,{now:1000000000000});
+ const selected=selectQuestions(s,{count:5,now:1000000000000});
  assert.equal(selected.length,5);
  assert.ok(selected.slice(0,4).every(id=>s.records[id]));
  assert.ok(selected.some(id=>!s.records[id]));
@@ -156,4 +156,33 @@ test('new bank covers all levels and every new output exercise has a runtime fix
  saveQuestionNote(s,q.id,'モードを確認する',s.session.responses[q.id],1000);
  assert.doesNotThrow(()=>validateState(JSON.parse(JSON.stringify(s))));
  assert.deepEqual(selectQuestions(s,{mode:'review'}),['q300']);
+});
+
+test('chosen set sizes survive backup and respect topic and review limits',()=>{
+ const s=initialState();assert.equal(s.settings.questionCount,10);
+ assert.equal(selectQuestions(s).length,10);
+ for(const count of [5,10,20,40]){
+  s.settings.questionCount=count;
+  const restored=validateState(JSON.parse(JSON.stringify(s)));
+  const ids=selectQuestions(restored);
+  assert.equal(ids.length,count);assert.equal(new Set(ids).size,count);
+  assert.equal(selectQuestions(restored,{mode:'quiz'}).length,10);
+ }
+ assert.equal(selectQuestions(s,{topic:'intro'}).length,7);
+ recordAnswer(s,'q04',[], 'unknown',0);
+ assert.deepEqual(selectQuestions(s,{mode:'review'}),['q04']);
+ delete s.settings.questionCount;
+ assert.doesNotThrow(()=>validateState(s));assert.equal(selectQuestions(s).length,10);
+ for(const value of [0,6,15,41,'20',null,true]){
+  assert.throws(()=>validateState({...s,settings:{...s.settings,questionCount:value}}));
+ }
+});
+
+test('large sets still include new questions when weak questions fill the set',()=>{
+ const s=initialState();s.settings.questionCount=40;
+ questions.slice(0,45).forEach(q=>recordAnswer(s,q.id,[], 'unknown',0));
+ const ids=selectQuestions(s,{now:1000000000000});
+ assert.equal(ids.length,40);assert.equal(new Set(ids).size,40);
+ assert.ok(ids.some(id=>!s.records[id]));
+ assert.ok(ids.slice(0,39).every(id=>s.records[id]));
 });
